@@ -6,19 +6,25 @@ async function sha256Hex(s) {
 export async function onRequestPost({ request, env }) {
   const { username, password } = await request.json();
 
-  if (!username || !password || password.length < 8) {
-    return new Response("Invalid input", { status: 400 });
+  if (!username || !password || username.length < 3 || password.length < 8) {
+    return new Response("Username must be 3+ chars, password 8+ chars", { status: 400 });
   }
 
-  const hash = await sha256Hex(password);
+  const pass_hash = await sha256Hex(password);
 
   try {
     await env.DB.prepare(
       "INSERT INTO users (username, pass_hash) VALUES (?, ?)"
-    ).bind(username, hash).run();
+    ).bind(username.trim(), pass_hash).run();
   } catch {
-    return new Response("Username taken", { status: 409 });
+    return new Response("Username already taken", { status: 409 });
   }
 
-  return Response.json({ ok: true });
+  // Optional: auto-login by setting a cookie
+  return new Response(JSON.stringify({ ok: true }), {
+    headers: {
+      "Content-Type": "application/json",
+      "Set-Cookie": `user=${encodeURIComponent(username.trim())}; Path=/; HttpOnly; SameSite=Lax; Secure`
+    }
+  });
 }
