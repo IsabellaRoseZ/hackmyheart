@@ -7,25 +7,25 @@
 <body>
   <h2>Login</h2>
 
-  <input id="user" placeholder="Username">
-  <input id="pass" type="password" placeholder="Password (8+ chars)">
-  <button onclick="login()">Login</button>
+  <input id="user" placeholder="Username" />
+  <input id="pass" type="password" placeholder="Password" />
+  <button id="btn">Login</button>
 
-  <p id="msg"></p>
+  <p>No account? <a href="/register.html">Register</a></p>
+  <pre id="msg"></pre>
 
   <script>
-    async function login() {
-      const res = await fetch("/api/auth_login", {
+    btn.onclick = async () => {
+      msg.textContent = "Logging in...";
+      const r = await fetch("/api/auth_login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: user.value,
-          password: pass.value
-        })
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({ username: user.value, password: pass.value })
       });
-
-      msg.textContent = res.ok ? "Logged in!" : "Login failed";
-    }
+      const t = await r.text();
+      msg.textContent = `Status ${r.status}: ${t}`;
+      if (r.ok) window.location.href = "/";
+    };
   </script>
 </body>
 </html>
