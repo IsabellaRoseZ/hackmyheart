@@ -4,10 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Scoreboard | Hack My Heart</title>
+
+  <!-- your normal site styles -->
   <link rel="stylesheet" href="/assets/styles.css">
+  <!-- scoreboard-only styles -->
+  <link rel="stylesheet" href="/assets/scoreboard.css">
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
+
   <header class="topbar">
     <div class="brand">
       <img class="logo" src="/assets/Main_HMH_CTF_Logo.png" alt="Logo">
@@ -23,23 +29,23 @@
     </nav>
   </header>
 
-  <main class="container" style="max-width:1100px; margin:22px auto; padding:0 16px;">
-    <h2 style="margin:10px 0 14px;">Scoreboard</h2>
+  <main class="scoreboard-wrap">
+    <h2 class="sb-title">Scoreboard</h2>
 
-    <div class="card" style="padding:16px; border-radius:18px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06);">
+    <div class="sb-card">
       <canvas id="scoreChart" height="120"></canvas>
     </div>
 
-    <div style="height:16px;"></div>
+    <div class="sb-gap"></div>
 
-    <div class="card" style="padding:16px; border-radius:18px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06);">
+    <div class="sb-card">
       <h3 style="margin:0 0 12px;">Standings</h3>
-      <table style="width:100%; border-collapse:collapse;">
+      <table class="sb-table">
         <thead>
           <tr>
-            <th style="text-align:left; padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.12);">Rank</th>
-            <th style="text-align:left; padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.12);">User</th>
-            <th style="text-align:right; padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.12);">Points</th>
+            <th class="sb-left">Rank</th>
+            <th class="sb-left">User</th>
+            <th class="sb-right">Points</th>
           </tr>
         </thead>
         <tbody id="rows"></tbody>
@@ -57,49 +63,32 @@
       const data = await res.json();
       const board = data.scoreboard || [];
 
-      // Build table
+      // table
       const tbody = document.getElementById("rows");
       tbody.innerHTML = "";
       board.forEach((u, i) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td style="padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.08);">${i + 1}</td>
-          <td style="padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.08);">${u.username}</td>
-          <td style="padding:10px 8px; border-bottom:1px solid rgba(255,255,255,.08); text-align:right;">${u.score}</td>
+          <td class="sb-left">${i + 1}</td>
+          <td class="sb-left">${u.username}</td>
+          <td class="sb-right">${Number(u.score)}</td>
         `;
         tbody.appendChild(tr);
       });
 
-      // Line chart: x = usernames, y = scores
+      // line chart (usernames vs score)
       const labels = board.map(x => x.username);
       const scores = board.map(x => Number(x.score));
 
-      const ctx = document.getElementById("scoreChart");
-      new Chart(ctx, {
+      new Chart(document.getElementById("scoreChart"), {
         type: "line",
         data: {
           labels,
-          datasets: [{
-            label: "Points",
-            data: scores,
-            tension: 0.25,
-            fill: false
-          }]
+          datasets: [{ label: "Points", data: scores, tension: 0.25 }]
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: { display: true }
-          },
-          scales: {
-            x: {
-              ticks: { maxRotation: 45, minRotation: 0 }
-            },
-            y: {
-              beginAtZero: true,
-              precision: 0
-            }
-          }
+          scales: { y: { beginAtZero: true } }
         }
       });
     }
