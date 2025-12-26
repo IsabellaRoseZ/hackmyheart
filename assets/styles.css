@@ -131,3 +131,8 @@ body{
 @media (max-width: 520px){
   .snowflake{ opacity:.35; }
 }
+
+.auth-card{
+  position: relative;
+  z-index: 2;
+}
