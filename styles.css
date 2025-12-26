@@ -1,0 +1,78 @@
+:root{
+  --bg: #0b0a0d;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #fff7fb;
+  --muted: rgba(255,255,255,0.7);
+
+  /* Theme colors */
+  --pink: #ff4fa3;
+  --red:  #ff2b3a;
+  --gold: #f7c948;
+}
+
+body{
+  margin:0;
+  color: var(--text);
+  font-family: system-ui, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(255,79,163,.20), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(247,201,72,.16), transparent 60%),
+    radial-gradient(900px 600px at 50% 120%, rgba(255,43,58,.12), transparent 60%),
+    var(--bg);
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+}
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+.logo{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  border:1px solid rgba(247,201,72,.35);
+  background: rgba(255,255,255,0.05);
+}
+
+.brand-title{
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size:20px;
+  line-height:1.1;
+  background: linear-gradient(90deg, var(--pink), var(--red), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-subtitle{
+  font-size:12px;
+  color: var(--muted);
+  margin-top:2px;
+}
+
+.nav a{
+  color: var(--text);
+  text-decoration:none;
+  margin-left:14px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid transparent;
+}
+
+.nav a:hover{
+  border-color: rgba(255,79,163,.35);
+  background: rgba(255,79,163,.08);
+}
