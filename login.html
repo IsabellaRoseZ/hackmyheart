@@ -8,42 +8,26 @@
 </head>
 <body class="auth-page">
 
-<div class="snowflakes" aria-hidden="true">
-  <div class="snowflake"><img src="/assets/heartflake.png" width="26" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="20" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="28" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="22" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="30" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="18" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="24" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="20" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="26" alt=""></div>
-  <div class="snowflake"><img src="/assets/heartflake.png" width="22" alt=""></div>
-</div>
-
   <main class="auth-shell">
-    <section class="auth-card auth-card--glass">
-      <div class="logo-frame logo-frame--fancy">
-        <img src="/assets/Main_HMH_CTF_Logo.png" alt="Hack My Heart Logo" class="auth-logo" />
+    <section class="auth-card">
+      <div class="logo-frame">
+        <img src="/assets/Main_HMH_CTF_Logo.png" alt="Hack My Heart Logo" class="auth-logo">
       </div>
 
       <h1 class="auth-title">Hack My Heart</h1>
-      <p class="auth-subtitle">Cybersecurity Club at CSU Stanislaus • Spring 2026</p>
+      <p class="auth-subtitle">Cybersecurity Club at CSU Stanislaus</p>
 
       <div class="auth-form">
         <label class="auth-label" for="user">Username</label>
-        <input id="user" autocomplete="username" placeholder="e.g. isabella" />
+        <input id="user" placeholder="Username" autocomplete="username">
 
         <label class="auth-label" for="pass">Password</label>
-        <input id="pass" type="password" autocomplete="current-password" placeholder="••••••••" />
+        <input id="pass" type="password" placeholder="Password" autocomplete="current-password">
 
         <button id="btn" class="btn-primary">Login</button>
 
-        <p class="auth-alt">
-          No account? <a href="/register.html">Register</a>
-        </p>
-
-        <p id="msg" class="auth-msg" role="status" aria-live="polite"></p>
+        <p class="auth-alt">No account? <a href="/register.html">Register</a></p>
+        <p id="msg" class="auth-msg"></p>
       </div>
     </section>
 
@@ -53,40 +37,25 @@
   </main>
 
   <script>
-    const setBusy = (busy) => {
-      btn.disabled = busy;
-      btn.textContent = busy ? "Logging in…" : "Login";
-    };
-
     btn.onclick = async () => {
       msg.textContent = "";
-      setBusy(true);
-
+      btn.disabled = true;
+      btn.textContent = "Logging in…";
       try {
         const r = await fetch("/api/auth_login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username: user.value, password: pass.value })
         });
-
-        if (r.ok) {
-          window.location.href = "/";
-          return;
-        }
-
-        const t = await r.text();
-        msg.textContent = t || "Login failed. Please try again.";
+        if (r.ok) { window.location.href = "/"; return; }
+        msg.textContent = await r.text();
       } catch {
-        msg.textContent = "Network error. Please try again.";
+        msg.textContent = "Network error";
       } finally {
-        setBusy(false);
+        btn.disabled = false;
+        btn.textContent = "Login";
       }
     };
-
-    // submit on Enter in password field
-    pass.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") btn.click();
-    });
   </script>
 </body>
 </html>
