@@ -1,146 +1,78 @@
 :root{
-  --bg:#0b0a0d;
-  --text:#fff7fb;
-  --muted:rgba(255,255,255,.72);
-  --border:rgba(255,255,255,.14);
-  --pink:#ff4fa3;
-  --red:#ff2b3a;
-  --gold:#f7c948;
+  --bg: #0b0a0d;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
+  --text: #fff7fb;
+  --muted: rgba(255,255,255,0.7);
+
+  /* Theme colors */
+  --pink: #ff4fa3;
+  --red:  #ff2b3a;
+  --gold: #f7c948;
 }
 
 body{
   margin:0;
-  font-family:system-ui,Segoe UI,Roboto,Arial;
-  color:var(--text);
+  color: var(--text);
+  font-family: system-ui, Segoe UI, Roboto, Arial;
   background:
-    radial-gradient(900px 500px at 15% 0%, rgba(255,79,163,.22), transparent 60%),
+    radial-gradient(900px 500px at 15% 0%, rgba(255,79,163,.20), transparent 60%),
     radial-gradient(900px 500px at 85% 0%, rgba(247,201,72,.16), transparent 60%),
-    radial-gradient(900px 700px at 50% 120%, rgba(255,43,58,.12), transparent 60%),
+    radial-gradient(900px 600px at 50% 120%, rgba(255,43,58,.12), transparent 60%),
     var(--bg);
 }
 
-.auth-page{ min-height:100vh; }
-
-.auth-shell{
-  min-height:100vh;
+.topbar{
   display:flex;
-  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  gap:16px;
-  padding:36px 14px 20px;
+  justify-content:space-between;
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
 }
 
-.auth-card{
-  width:100%;
-  max-width:480px;
-  border-radius:26px;
-  padding:34px 34px 28px;
-  background: rgba(0,0,0,.45);
-  border:1px solid var(--border);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 30px 100px rgba(0,0,0,.72);
-  text-align:center;
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
 }
 
-.logo-frame{
-  width:132px;
-  height:132px;
-  padding:10px;
-  margin:0 auto 10px;
-  border-radius:28px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,79,163,.38), transparent 55%),
-    radial-gradient(circle at 85% 30%, rgba(255,43,58,.26), transparent 60%),
-    radial-gradient(circle at 50% 95%, rgba(247,201,72,.20), transparent 62%),
-    rgba(255,255,255,.06);
-  border:1px solid rgba(247,201,72,.55);
+.logo{
+  width:46px;
+  height:46px;
+  border-radius:12px;
+  border:1px solid rgba(247,201,72,.35);
+  background: rgba(255,255,255,0.05);
 }
 
-.auth-logo{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:18px;
-  background:#fff;
-  padding:6px;
-}
-
-.auth-title{
-  margin:10px 0 4px;
-  font-size:32px;
-  font-weight:1000;
-  background: linear-gradient(90deg, var(--pink), var(--red), var(--gold));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-
-.auth-subtitle{
-  margin:0 0 18px;
-  font-size:14px;
-  color:var(--muted);
-}
-
-.auth-form{ text-align:left; margin-top:10px; }
-
-.auth-label{
-  display:block;
-  font-size:12px;
-  color:rgba(255,255,255,.78);
-  margin:12px 0 6px;
-}
-
-.auth-form input{
-  width:100%;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.07);
-  color:var(--text);
-  font-size:15px;
-  outline:none;
-}
-
-.auth-form input:focus{
-  border-color:rgba(247,201,72,.55);
-  box-shadow:0 0 0 3px rgba(255,79,163,.14);
-}
-
-.btn-primary{
-  width:100%;
-  margin-top:16px;
-  padding:12px 14px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,.14);
-  background: linear-gradient(90deg, rgba(255,79,163,.50), rgba(255,43,58,.42), rgba(247,201,72,.26));
-  color:#fff;
+.brand-title{
   font-weight:900;
-  cursor:pointer;
+  letter-spacing:.2px;
+  font-size:20px;
+  line-height:1.1;
+  background: linear-gradient(90deg, var(--pink), var(--red), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.auth-alt{
-  margin:12px 0 0;
-  text-align:center;
-  font-size:14px;
-  color:rgba(255,255,255,.82);
-}
-
-.auth-alt a{ color:var(--pink); font-weight:800; text-decoration:none; }
-.auth-alt a:hover{ text-decoration:underline; }
-
-.auth-msg{
-  min-height:18px;
-  margin:10px 0 0;
-  text-align:center;
+.brand-subtitle{
   font-size:12px;
-  color:var(--gold);
+  color: var(--muted);
+  margin-top:2px;
 }
 
-.auth-footer{
-  text-align:center;
-  max-width:760px;
-  font-size:12px;
-  color:rgba(255,255,255,.70);
-  padding:0 10px;
+.nav a{
+  color: var(--text);
+  text-decoration:none;
+  margin-left:14px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid transparent;
+}
+
+.nav a:hover{
+  border-color: rgba(255,79,163,.35);
+  background: rgba(255,79,163,.08);
 }
