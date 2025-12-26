@@ -1,0 +1,30 @@
+/* Scoreboard-only styles so nothing else breaks */
+.scoreboard-wrap{
+  max-width: 1100px;
+  margin: 22px auto;
+  padding: 0 16px;
+}
+
+.sb-card{
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+}
+
+.sb-table{
+  width:100%;
+  border-collapse: collapse;
+}
+
+.sb-table th,
+.sb-table td{
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.sb-right{ text-align:right; }
+.sb-left{ text-align:left; }
+
+.sb-title{ margin: 10px 0 14px; }
+.sb-gap{ height: 16px; }
