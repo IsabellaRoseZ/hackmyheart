@@ -534,3 +534,164 @@ body{
   0%,100%{ transform: translateY(0) translateX(0) rotate(-2deg); }
   50%{ transform: translateY(-22px) translateX(14px) rotate(3deg); }
 }
+
+/* ---------- AUTH POLISH OVERRIDES ---------- */
+
+/* Slightly richer background + vignette */
+.auth-page{
+  background:
+    radial-gradient(1100px 600px at 20% 0%, rgba(255,79,163,.22), transparent 58%),
+    radial-gradient(1100px 620px at 85% 0%, rgba(247,201,72,.16), transparent 60%),
+    radial-gradient(1100px 780px at 50% 120%, rgba(255,43,58,.12), transparent 60%),
+    radial-gradient(900px 700px at 50% 55%, rgba(0,0,0,.35), transparent 60%),
+    #0a070b;
+}
+
+.auth-card--glass{
+  border-radius: 30px;
+  background: rgba(10,8,12,.52);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.75),
+    inset 0 1px 0 rgba(255,255,255,.06),
+    inset 0 0 0 1px rgba(255,255,255,.04);
+  backdrop-filter: blur(18px);
+  padding: 36px 38px 30px;
+}
+
+/* Add a soft top highlight line */
+.auth-card--glass::before{
+  content:"";
+  position:absolute;
+  left:18px; right:18px; top:14px;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.10), transparent);
+  pointer-events:none;
+}
+
+/* Logo: nicer framing + gold halo */
+.logo-frame--fancy{
+  width: 140px;
+  height: 140px;
+  border-radius: 30px;
+  position: relative;
+  border: 1px solid rgba(247,201,72,.62);
+  background:
+    radial-gradient(circle at 22% 20%, rgba(255,79,163,.45), transparent 52%),
+    radial-gradient(circle at 82% 26%, rgba(255,43,58,.28), transparent 60%),
+    radial-gradient(circle at 50% 92%, rgba(247,201,72,.24), transparent 62%),
+    rgba(255,255,255,.06);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.62),
+    0 0 0 5px rgba(255,79,163,.09),
+    0 0 50px rgba(247,201,72,.10),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Gold ring behind logo */
+.logo-frame--fancy::after{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border-radius: 34px;
+  background: radial-gradient(circle at 50% 50%,
+    rgba(247,201,72,.18),
+    transparent 62%);
+  filter: blur(2px);
+  z-index:-1;
+}
+
+.auth-logo{
+  border-radius: 22px;
+  background: rgba(255,255,255,.92); /* makes black logo pop */
+  padding: 6px;
+}
+
+/* Better title/subtitle hierarchy */
+.auth-title{
+  margin: 10px 0 4px;
+  font-size: 34px;
+  font-weight: 1000;
+  letter-spacing: .2px;
+  text-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
+
+.auth-subtitle{
+  font-size: 14px;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 20px;
+}
+
+/* Inputs: cleaner contrast + glow focus */
+.auth-form input{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 13px 14px;
+}
+
+.auth-form input::placeholder{
+  color: rgba(255,255,255,.45);
+}
+
+.auth-form input:focus{
+  border-color: rgba(247,201,72,.55);
+  box-shadow:
+    0 0 0 3px rgba(255,79,163,.14),
+    0 0 0 6px rgba(247,201,72,.08);
+}
+
+/* Button: stronger gradient + hover lift */
+.btn-primary{
+  border-radius: 18px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(90deg,
+    rgba(255,79,163,.52),
+    rgba(255,43,58,.44),
+    rgba(247,201,72,.30));
+  box-shadow:
+    0 18px 50px rgba(255,79,163,.12),
+    0 14px 40px rgba(0,0,0,.55);
+}
+
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow:
+    0 22px 60px rgba(255,79,163,.16),
+    0 18px 50px rgba(0,0,0,.60);
+}
+
+.btn-primary:active{
+  transform: translateY(0px);
+}
+
+/* Make the error/info message feel nicer */
+.auth-msg{
+  color: rgba(247,201,72,.95);
+  text-shadow: 0 10px 25px rgba(0,0,0,.55);
+}
+
+/* Footer spacing */
+.auth-footer{
+  margin-top: 6px;
+  opacity: .92;
+}
+
+/* Hearts: fewer, larger, slower, softer */
+.hb{
+  opacity: .12;
+  filter: blur(.4px) drop-shadow(0 20px 34px rgba(0,0,0,.55));
+  animation: drift 16s ease-in-out infinite;
+  border-radius: 26px;
+}
+
+.hb1{ left: 4%;  top: 14%; width:140px; height:140px; background: rgba(255,79,163,.26); animation-duration: 18s; }
+.hb2{ left: 14%; top: 78%; width:90px;  height:90px;  background: rgba(247,201,72,.16); animation-duration: 22s; }
+.hb3{ left: 38%; top: 6%;  width:110px; height:110px; background: rgba(255,43,58,.18); animation-duration: 20s; }
+.hb4{ left: 70%; top: 16%; width:160px; height:160px; background: rgba(255,79,163,.16); animation-duration: 24s; }
+.hb5{ left: 82%; top: 72%; width:120px; height:120px; background: rgba(255,43,58,.14); animation-duration: 23s; }
+.hb6{ left: 92%; top: 34%; width:90px;  height:90px;  background: rgba(247,201,72,.12); animation-duration: 26s; }
+.hb7{ left: 52%; top: 84%; width:130px; height:130px; background: rgba(255,79,163,.14); animation-duration: 21s; }
+.hb8{ left: 6%;  top: 46%; width:85px;  height:85px;  background: rgba(255,43,58,.12); animation-duration: 28s; }
+.hb9{ left: 48%; top: 22%; width:75px;  height:75px;  background: rgba(247,201,72,.10); animation-duration: 30s; }
