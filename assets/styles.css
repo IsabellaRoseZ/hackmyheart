@@ -76,3 +76,167 @@ body{
   border-color: rgba(255,79,163,.35);
   background: rgba(255,79,163,.08);
 }
+
+:root{
+  --bg:#0b0a0d;
+  --text:#fff7fb;
+  --muted:rgba(255,255,255,.75);
+  --border:rgba(255,255,255,.14);
+  --pink:#ff4fa3;
+  --red:#ff2b3a;
+  --gold:#f7c948;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(255,79,163,.20), transparent 60%),
+    radial-gradient(900px 500px at 85% 0%, rgba(247,201,72,.16), transparent 60%),
+    radial-gradient(900px 700px at 50% 120%, rgba(255,43,58,.12), transparent 60%),
+    var(--bg);
+}
+
+/* ---------- CENTER LAYOUT ---------- */
+.auth-page{
+  min-height:100vh;
+}
+
+.auth-center{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:24px 14px;
+}
+
+/* ---------- LOGIN CARD ---------- */
+.login-card{
+  width:100%;
+  max-width:420px;
+  padding:32px 30px 28px;
+  border-radius:24px;
+  background:rgba(0,0,0,.45);
+  border:1px solid var(--border);
+  backdrop-filter:blur(14px);
+  box-shadow:0 30px 100px rgba(0,0,0,.75);
+  text-align:center;
+}
+
+/* ---------- LOGO ---------- */
+.logo-box{
+  width:72px;
+  height:72px;
+  margin:0 auto 12px;
+  padding:8px;
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(247,201,72,.55);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.6),
+    0 0 0 3px rgba(255,79,163,.12);
+}
+
+.logo-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  border-radius:12px;
+  background:white;
+  padding:4px;
+}
+
+/* ---------- TEXT ---------- */
+.login-title{
+  margin:10px 0 4px;
+  font-size:28px;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--pink),var(--red),var(--gold));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.login-subtitle{
+  margin-bottom:18px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ---------- FORM ---------- */
+.login-label{
+  display:block;
+  text-align:left;
+  font-size:12px;
+  color:rgba(255,255,255,.8);
+  margin:12px 0 6px;
+}
+
+.login-card input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.07);
+  color:var(--text);
+  font-size:15px;
+  outline:none;
+}
+
+.login-card input:focus{
+  border-color:rgba(247,201,72,.55);
+  box-shadow:0 0 0 3px rgba(255,79,163,.15);
+}
+
+/* ---------- BUTTON ---------- */
+.login-btn{
+  width:100%;
+  margin-top:16px;
+  padding:12px 14px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:linear-gradient(90deg,
+    rgba(255,79,163,.48),
+    rgba(255,43,58,.42),
+    rgba(247,201,72,.28));
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.login-btn:disabled{
+  opacity:.7;
+}
+
+/* ---------- MISC ---------- */
+.login-alt{
+  margin-top:12px;
+  font-size:14px;
+}
+
+.login-alt a{
+  color:var(--pink);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.login-alt a:hover{
+  text-decoration:underline;
+}
+
+.login-msg{
+  min-height:18px;
+  margin-top:10px;
+  font-size:12px;
+  color:var(--gold);
+}
+
+.login-footer{
+  font-size:12px;
+  color:rgba(255,255,255,.7);
+  text-align:center;
+  max-width:700px;
+}
