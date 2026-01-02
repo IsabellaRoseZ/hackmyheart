@@ -68,7 +68,11 @@
         const isOpen = openId === x.id;
 
         return `
-          <article class="card" data-id="${escapeHtml(x.id)}">
+          const isOpen = openId === x.id;
+          const isOtherWhenOpen = openId && !isOpen;
+        return `
+          <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
+          
             <div class="row">
               <div>
                 <div class="title">${escapeHtml(x.title)}</div>
@@ -77,7 +81,7 @@
               <span class="pill">${escapeHtml(x.difficulty)}</span>
             </div>
 
-            <button class="link start-btn" data-id="${escapeHtml(x.id)}">
+            <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
               ${isOpen ? "Close Challenge" : "Start Challenge"}
             </button>
             </div>
