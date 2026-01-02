@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Hack My Heart CTF</title>
-  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="assets/style.css?v=6"/>
 </head>
 <body>
   <header class="wrap header-bar">
@@ -37,46 +37,14 @@
     <div id="grid" class="grid"></div>
   </main>
 
-  <!-- Modal -->
-  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-x" id="modalClose" aria-label="Close">✕</button>
-
-      <div class="modal-top">
-        <div>
-          <div id="modalTitle" class="modal-title"></div>
-          <div id="modalMeta" class="modal-meta"></div>
-        </div>
-        <span id="modalPill" class="pill"></span>
-      </div>
-
-      <div id="modalBrief" class="modal-brief"></div>
-
-      <div id="modalLinks" class="modal-links"></div>
-
-      <div class="modal-actions">
-        <a class="btn" id="modalSubmit" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flag</a>
-        <button class="btn ghost" id="modalDone">Back to Challenges</button>
-      </div>
-    </div>
-  </div>
-
   <script>
     const grid = document.getElementById("grid");
     const search = document.getElementById("search");
     const cat = document.getElementById("cat");
-
-    // Modal elements
-    const backdrop = document.getElementById("modalBackdrop");
-    const modalClose = document.getElementById("modalClose");
-    const modalDone = document.getElementById("modalDone");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalMeta = document.getElementById("modalMeta");
-    const modalPill = document.getElementById("modalPill");
-    const modalBrief = document.getElementById("modalBrief");
-    const modalLinks = document.getElementById("modalLinks");
+    const FORM_LINK = "YOUR_GOOGLE_FORM_LINK";
 
     let all = [];
+    let openId = null; // only one open panel at a time
 
     function escapeHtml(s) {
       return String(s ?? "")
@@ -87,63 +55,6 @@
         .replaceAll("'", "&#039;");
     }
 
-    function openModal(ch) {
-      modalTitle.textContent = ch.title || "";
-      modalMeta.innerHTML = `${escapeHtml(ch.category || "")} • ${escapeHtml(ch.points || 0)} pts • ID: <code>${escapeHtml(ch.id || "")}</code>`;
-      modalPill.textContent = ch.difficulty || "";
-
-      // Use briefing if present; otherwise fall back to prompt
-      const briefingText = ch.briefing || ch.prompt || "";
-      modalBrief.innerHTML = `<p>${escapeHtml(briefingText).replaceAll("\n", "<br/>")}</p>`;
-
-      // Links area: only show downloads/urls if they exist
-      const links = [];
-
-      // Support either downloads[] or a single download string
-      if (Array.isArray(ch.downloads) && ch.downloads.length) {
-        ch.downloads.forEach(d => {
-          if (d && d.url) {
-            links.push(`<a class="link" href="${escapeHtml(d.url)}" target="_blank" rel="noopener">⬇ ${escapeHtml(d.label || "Download")}</a>`);
-          }
-        });
-      } else if (ch.download) {
-        links.push(`<a class="link" href="${escapeHtml(ch.download)}" target="_blank" rel="noopener">⬇ Download files</a>`);
-      }
-
-      if (ch.url) {
-        links.push(`<a class="link" href="${escapeHtml(ch.url)}" target="_blank" rel="noopener">↗ Open resource</a>`);
-      }
-
-      // Optional: show hint inside modal
-      if (ch.hint) {
-        links.push(`<details class="hint"><summary>Hint</summary><p>${escapeHtml(ch.hint)}</p></details>`);
-      }
-
-      modalLinks.innerHTML = links.length ? links.join("<br/>") : `<div class="muted">No downloads needed — solve from the briefing.</div>`;
-
-      // Open
-      backdrop.classList.add("open");
-      backdrop.setAttribute("aria-hidden", "false");
-
-      // Focus for accessibility
-      modalClose.focus();
-    }
-
-    function closeModal() {
-      backdrop.classList.remove("open");
-      backdrop.setAttribute("aria-hidden", "true");
-    }
-
-    // Close on backdrop click
-    backdrop.addEventListener("click", (e) => {
-      if (e.target === backdrop) closeModal();
-    });
-    modalClose.addEventListener("click", closeModal);
-    modalDone.addEventListener("click", closeModal);
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && backdrop.classList.contains("open")) closeModal();
-    });
-
     function render() {
       const q = search.value.toLowerCase().trim();
       const c = cat.value;
@@ -153,32 +64,106 @@
         return (!q || hay.includes(q)) && (!c || x.category === c);
       });
 
-      grid.innerHTML = filtered.map((x, idx) => `
-        <article class="card">
-          <div class="row">
-            <div>
-              <div class="title">${escapeHtml(x.title)}</div>
-              <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
+      grid.innerHTML = filtered.map(x => {
+        const isOpen = openId === x.id;
+
+        return `
+          <article class="card" data-id="${escapeHtml(x.id)}">
+            <div class="row">
+              <div>
+                <div class="title">${escapeHtml(x.title)}</div>
+                <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
+              </div>
+              <span class="pill">${escapeHtml(x.difficulty)}</span>
             </div>
-            <span class="pill">${escapeHtml(x.difficulty)}</span>
-          </div>
 
-          <p class="desc">${escapeHtml(x.prompt || "")}</p>
+            <p class="desc">${escapeHtml(x.prompt || "")}</p>
 
-          <div class="actions">
-            <button class="link link-btn" data-idx="${idx}">Briefing</button>
-            <a class="link" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flag</a>
-          </div>
-        </article>
-      `).join("");
+            <div class="actions">
+              <button class="link link-like start-btn" data-id="${escapeHtml(x.id)}">
+                ${isOpen ? "Close" : "Start Challenge"}
+              </button>
+              <a class="link" href="${FORM_LINK}" target="_blank" rel="noopener">Submit Flag</a>
+            </div>
 
-      // Wire buttons
-      document.querySelectorAll(".link-btn").forEach(btn => {
+            <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
+              ${isOpen ? briefingHtml(x) : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      // Wire up Start Challenge buttons
+      document.querySelectorAll(".start-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-          const i = Number(btn.getAttribute("data-idx"));
-          openModal(filtered[i]);
+          const id = btn.getAttribute("data-id");
+          openId = (openId === id) ? null : id;
+          render();
+          // scroll the opened panel into view slightly (nice UX)
+          if (openId) {
+            const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+            const panel = card?.querySelector(".briefing-panel");
+            panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
         });
       });
+    }
+
+    function briefingHtml(x) {
+      const parts = [];
+
+      // Briefing text (use briefing if present, else prompt)
+      const text = (x.briefing || x.prompt || "").trim();
+      if (text) {
+        parts.push(`
+          <div class="briefing-text">
+            ${escapeHtml(text).replaceAll("\n", "<br/>")}
+          </div>
+        `);
+      }
+
+      // Downloads: support downloads[] or download string
+      const links = [];
+
+      if (Array.isArray(x.downloads) && x.downloads.length) {
+        x.downloads.forEach(d => {
+          if (d && d.url) {
+            links.push(`<a class="briefing-link" href="${escapeHtml(d.url)}" target="_blank" rel="noopener">⬇ ${escapeHtml(d.label || "Download")}</a>`);
+          }
+        });
+      } else if (x.download) {
+        links.push(`<a class="briefing-link" href="${escapeHtml(x.download)}" target="_blank" rel="noopener">⬇ Download files</a>`);
+      }
+
+      if (x.url) {
+        links.push(`<a class="briefing-link" href="${escapeHtml(x.url)}" target="_blank" rel="noopener">↗ Open resource</a>`);
+      }
+
+      if (links.length) {
+        parts.push(`<div class="briefing-links">${links.join("")}</div>`);
+      } else {
+        parts.push(`<div class="briefing-muted">No downloads needed — solve from the briefing.</div>`);
+      }
+
+      // Hint (optional)
+      if (x.hint) {
+        parts.push(`
+          <details class="hint">
+            <summary>Hint</summary>
+            <p>${escapeHtml(x.hint)}</p>
+          </details>
+        `);
+      }
+
+      // Quick copy helper for Challenge ID
+      parts.push(`
+        <div class="briefing-tools">
+          <button class="copy-btn" onclick="navigator.clipboard.writeText('${escapeHtml(x.id)}')">Copy Challenge ID</button>
+          <a class="copy-btn ghost" href="${FORM_LINK}" target="_blank" rel="noopener">Submit Flag</a>
+        </div>
+      `);
+
+      return parts.join("");
     }
 
     fetch("challenges.json")
@@ -194,8 +179,8 @@
         render();
       });
 
-    search.addEventListener("input", render);
-    cat.addEventListener("change", render);
+    search.addEventListener("input", () => { openId = null; render(); });
+    cat.addEventListener("change", () => { openId = null; render(); });
   </script>
 </body>
 </html>
