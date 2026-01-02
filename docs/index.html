@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Aurelius Dynamics CTF</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <header class="wrap">
+    <h1>🛰️ Aurelius Dynamics CTF</h1>
+    <p class="sub">
+      40 challenges • NCL-style • serverless • submit flags via one form
+    </p>
+    <div class="links">
+      <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank">Submit Flags</a>
+      <a class="btn" href="scoreboard.html">Scoreboard</a>
+      <a class="btn" href="rules.html">Rules</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <input id="search" placeholder="Search challenges (e.g., crypto, pcap, web)"/>
+      <select id="cat">
+        <option value="">All categories</option>
+      </select>
+    </div>
+
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const search = document.getElementById("search");
+    const cat = document.getElementById("cat");
+
+    let all = [];
+
+    function render() {
+      const q = search.value.toLowerCase().trim();
+      const c = cat.value;
+
+      const filtered = all.filter(x => {
+        const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
+        return (!q || hay.includes(q)) && (!c || x.category === c);
+      });
+
+      grid.innerHTML = filtered.map(x => `
+        <article class="card">
+          <div class="row">
+            <div>
+              <div class="title">${x.title}</div>
+              <div class="meta">${x.category} • ${x.points} pts • ID: <code>${x.id}</code></div>
+            </div>
+            <span class="pill">${x.difficulty}</span>
+          </div>
+          <p class="desc">${x.prompt}</p>
+          <div class="actions">
+            ${x.download ? `<a class="link" href="${x.download}" target="_blank">Download</a>` : ""}
+            ${x.url ? `<a class="link" href="${x.url}" target="_blank">Open</a>` : ""}
+            <a class="link" href="YOUR_GOOGLE_FORM_LINK" target="_blank">Submit Flag</a>
+          </div>
+          ${x.hint ? `<details class="hint"><summary>Hint</summary><p>${x.hint}</p></details>` : ""}
+        </article>
+      `).join("");
+    }
+
+    fetch("challenges.json")
+      .then(r => r.json())
+      .then(data => {
+        all = data;
+        const cats = [...new Set(all.map(x => x.category))].sort();
+        cats.forEach(c => {
+          const o = document.createElement("option");
+          o.value = c; o.textContent = c;
+          cat.appendChild(o);
+        });
+        render();
+      });
+
+    search.addEventListener("input", render);
+    cat.addEventListener("change", render);
+  </script>
+</body>
+</html>
