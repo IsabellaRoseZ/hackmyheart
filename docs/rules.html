@@ -4,25 +4,28 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Rules • Hack My Heart CTF</title>
-  <link rel="stylesheet" href="assets/style.css?v=10"/>
-<body>
-    <header class="wrap header-bar">
-      <div class="header-left">
-        <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
-  
-        <div class="title-block">
-          <h1 class="ombre-title">Rules</h1>
-          <p class="sub">Play fair. Hack systems, not people. 💖</p>
+  <link rel="stylesheet" href="assets/style.css?v=11"/>
+</head>
+<body class="rules-page">
+
+  <header class="wrap header-bar header-stack">
+    <div class="header-left header-left-stack">
+      <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
+
+      <div class="title-block">
+        <h1 class="ombre-title">Rules</h1>
+        <p class="sub">Play fair. Hack systems, not people. 💖</p>
+
+        <!-- ✅ Buttons ALWAYS stay under title, left-aligned -->
+        <div class="links links-under">
+          <a class="btn" href="index.html">Challenges</a>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform" target="_blank" rel="noopener">Submit Flags</a>
+          <a class="btn" href="scoreboard.html">Scoreboard</a>
+          <a class="btn" href="rules.html">Rules</a>
         </div>
       </div>
-  
-      <div class="links">
-        <a class="btn" href="index.html">Challenges</a>
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform" target="_blank" rel="noopener">Submit Flags</a>
-        <a class="btn" href="scoreboard.html">Scoreboard</a>
-        <a class="btn" href="rules.html">Rules</a>
-      </div>
-    </header>
+    </div>
+  </header>
 
   <main class="wrap">
     <section class="card rules">
@@ -98,6 +101,19 @@
     .rules h3 { margin-top: 18px; }
     .rules ul { line-height: 1.5; }
     .rules code { font-weight: 800; }
+
+    /* ✅ Force "buttons under title" layout on Rules page */
+    .header-stack {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .header-left-stack {
+      align-items: flex-start;
+    }
+    .links-under {
+      margin-top: 14px;
+      justify-content: flex-start;
+    }
   </style>
 </body>
 </html>
