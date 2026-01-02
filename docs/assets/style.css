@@ -388,3 +388,7 @@ code {
 .copy-btn.ghost {
   background: transparent;
 }
+
+.card {
+  padding-bottom: 16px;
+}
