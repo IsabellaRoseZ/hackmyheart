@@ -255,11 +255,62 @@ code {
 
 /* ===== Inline "Start Challenge" dropdown panel ===== */
 
-button.link {
-  background: none;
+/* ===== Cute Pink "Start Challenge" Button ===== */
+
+.start-btn {
+  appearance: none;
   border: none;
-  padding: 0;
   cursor: pointer;
+
+  padding: 10px 16px;
+  border-radius: 999px; /* super rounded = cute */
+
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+
+  color: #fff;
+
+  background: linear-gradient(
+    135deg,
+    #ff7aa8,   /* pink */
+    #ff9bbf,
+    #ff5f7e    /* deeper pink */
+  );
+
+  box-shadow:
+    0 6px 18px rgba(255, 95, 126, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 8px 24px rgba(255, 95, 126, 0.55),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 12px rgba(255, 95, 126, 0.4),
+    inset 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Optional: different look when open */
+.start-btn.open {
+  background: linear-gradient(
+    135deg,
+    #ff4d6d,
+    #ff6f91,
+    #ff8fab
+  );
 }
 
 .briefing-panel {
