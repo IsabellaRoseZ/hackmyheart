@@ -359,13 +359,16 @@ button.link {
   cursor: pointer;
 }
 
-/* ===== Left-aligned header buttons (Rules page) ===== */
-
-.header-stacked {
+/* Stack header content vertically (Rules page only) */
+.header-vertical {
   align-items: flex-start;
 }
 
-.links-left {
+/* Buttons under title, aligned left */
+.links-under {
   margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
