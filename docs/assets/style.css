@@ -372,3 +372,21 @@ button.link {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+/* Rules page: stack header and keep buttons under title */
+.rules-page .header-bar.header-stack {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rules-page .header-left.header-left-stack {
+  align-items: flex-start;
+}
+
+/* IMPORTANT: remove any centering and push links flush to title block left edge */
+.rules-page .links.links-under {
+  margin-top: 14px;
+  margin-left: 0;
+  padding-left: 0;
+  justify-content: flex-start;
+}
