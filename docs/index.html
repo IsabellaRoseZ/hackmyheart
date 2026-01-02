@@ -14,13 +14,13 @@
       <div class="title-block">
         <h1 class="ombre-title">Hack My Heart CTF</h1>
         <p class="sub">
-          40 Valentine’s-themed challenges • jeopardy-style • submit flags via Google Form • check scoreboard for status
+          40 Valentine’s-themed challenges • Jeopardy-style • submit flags via Google Form • check scoreboard for status
         </p>
       </div>
     </div>
 
     <div class="links">
-      <a class="btn" href="Google Form" target="_blank" rel="noopener">Submit Flags</a>
+      <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flags</a>
       <a class="btn" href="scoreboard.html">Scoreboard</a>
       <a class="btn" href="rules.html">Rules</a>
     </div>
@@ -41,7 +41,7 @@
     const grid = document.getElementById("grid");
     const search = document.getElementById("search");
     const cat = document.getElementById("cat");
-    const FORM_LINK = "Google Form";
+    const FORM_LINK = "YOUR_GOOGLE_FORM_LINK";
 
     let all = [];
     let openId = null; // only one open panel at a time
@@ -155,7 +155,7 @@
       parts.push(`
         <div class="briefing-tools">
           <button class="copy-btn" onclick="navigator.clipboard.writeText('${escapeHtml(x.id)}')">Copy Challenge ID</button>
-          <a class="copy-btn ghost" href="${Google Form}" target="_blank" rel="noopener">Submit Flag</a>
+          <a class="copy-btn ghost" href="${FORM_LINK}" target="_blank" rel="noopener">Submit Flag</a>
         </div>
       `);
 
