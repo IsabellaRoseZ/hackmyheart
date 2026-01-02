@@ -255,18 +255,6 @@ code {
 
 /* ===== Inline "Start Challenge" dropdown panel ===== */
 
-.link-like {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  color: var(--link);
-  font-weight: 700;
-}
-
-.link-like:hover { color: var(--linkHover); }
-
 .briefing-panel {
   margin-top: 10px;
   border-top: 1px dashed rgba(255, 95, 162, 0.22);
