@@ -1,14 +1,13 @@
 [
   {
-    "id": "CRY-01",
-    "title": "Payroll Whisper",
-    "category": "Crypto",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "Aurelius HR exported an 'encrypted' payroll note. Recover the flag.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/payroll_whisper.zip",
-    "hint": "They reused a key… and the file header is predictable.",
-    "tags": ["xor", "known-plaintext"]
+  "id": "CRY-01",
+  "title": "Payroll Whisper",
+  "category": "Crypto",
+  "points": 100,
+  "difficulty": "Easy",
+  "prompt": "Decrypt the payroll note.",
+  "briefing": "Aurelius HR reused a weak cipher. Recover the plaintext and submit FLAG{...}.",
+  "hint": "Think XOR and known plaintext."
   },
   {
     "id": "FOR-01",
