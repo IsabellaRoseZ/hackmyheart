@@ -20,7 +20,7 @@
     </div>
 
     <div class="links">
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform" target="_blank" rel="noopener">Submit Flags</a>
+      <a class="btn" href="Google Form" target="_blank" rel="noopener">Submit Flags</a>
       <a class="btn" href="scoreboard.html">Scoreboard</a>
       <a class="btn" href="rules.html">Rules</a>
     </div>
@@ -41,7 +41,7 @@
     const grid = document.getElementById("grid");
     const search = document.getElementById("search");
     const cat = document.getElementById("cat");
-    const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform";
+    const FORM_LINK = "Google Form";
 
     let all = [];
     let openId = null; // only one open panel at a time
@@ -155,7 +155,7 @@
       parts.push(`
         <div class="briefing-tools">
           <button class="copy-btn" onclick="navigator.clipboard.writeText('${escapeHtml(x.id)}')">Copy Challenge ID</button>
-          <a class="copy-btn ghost" href="${https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform}" target="_blank" rel="noopener">Submit Flag</a>
+          <a class="copy-btn ghost" href="${Google Form}" target="_blank" rel="noopener">Submit Flag</a>
         </div>
       `);
 
