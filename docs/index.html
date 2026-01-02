@@ -3,27 +3,28 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Hack My Heart CTF </title>
+  <title>Hack My Heart CTF</title>
   <link rel="stylesheet" href="assets/style.css"/>
 </head>
 <body>
   <header class="wrap header-bar">
     <div class="header-left">
-      <img src="assets/logo.png" alt="Hack My Heart logo" class="logo"/>
-      <div>
-      <h1>Hack My Heart CTF</h1>
-      <p class="sub">
-        40 Valentines-themed challenges • Jepoardy-style • submit flags via Google form • Check scoreboard for status
-      </p>
+      <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
+
+      <div class="title-block">
+        <h1 class="ombre-title">Hack My Heart CTF</h1>
+        <p class="sub">
+          40 Valentine’s-themed challenges • Jeopardy-style • submit flags via Google Form • check scoreboard for status
+        </p>
+      </div>
     </div>
-  </div>   
-  
-  <div class="links">
-    <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank">Submit Flags</a>
-    <a class="btn" href="scoreboard.html">Scoreboard</a>
-    <a class="btn" href="rules.html">Rules</a>
-  </div>
-</header>
+
+    <div class="links">
+      <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flags</a>
+      <a class="btn" href="scoreboard.html">Scoreboard</a>
+      <a class="btn" href="rules.html">Rules</a>
+    </div>
+  </header>
 
   <main class="wrap">
     <div class="controls">
@@ -61,12 +62,15 @@
             </div>
             <span class="pill">${x.difficulty}</span>
           </div>
+
           <p class="desc">${x.prompt}</p>
+
           <div class="actions">
-            ${x.download ? `<a class="link" href="${x.download}" target="_blank">Download</a>` : ""}
-            ${x.url ? `<a class="link" href="${x.url}" target="_blank">Open</a>` : ""}
-            <a class="link" href="YOUR_GOOGLE_FORM_LINK" target="_blank">Submit Flag</a>
+            ${x.download ? `<a class="link" href="${x.download}" target="_blank" rel="noopener">Download</a>` : ""}
+            ${x.url ? `<a class="link" href="${x.url}" target="_blank" rel="noopener">Open</a>` : ""}
+            <a class="link" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flag</a>
           </div>
+
           ${x.hint ? `<details class="hint"><summary>Hint</summary><p>${x.hint}</p></details>` : ""}
         </article>
       `).join("");
