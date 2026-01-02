@@ -252,3 +252,97 @@ code {
   border: 1px solid rgba(255,255,255,0.08);
   color: #ffe3ec;
 }
+
+/* ===== Modal (Briefing Popup) ===== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.modal {
+  width: min(860px, 100%);
+  background: linear-gradient(180deg, rgba(15, 22, 42, 0.96), rgba(15, 22, 42, 0.86));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+  padding: 16px 16px 14px;
+  position: relative;
+}
+
+.modal-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  padding-right: 36px;
+}
+
+.modal-title {
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.modal-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.modal-brief {
+  margin-top: 14px;
+  color: rgba(233, 238, 252, 0.90);
+  line-height: 1.45;
+}
+
+.modal-links {
+  margin-top: 14px;
+}
+
+.modal-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.link-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
