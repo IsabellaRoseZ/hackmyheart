@@ -220,7 +220,7 @@ body {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 14px;
 }
 
 .link {
@@ -262,21 +262,31 @@ code {
   border: none;
   cursor: pointer;
 
-  padding: 10px 16px;
-  border-radius: 999px; /* super rounded = cute */
+  /* ⬆️ Bigger size */
+  padding: 12px 22px;
+  font-size: 1.05rem;
+  font-weight: 900;
 
-  font-weight: 800;
-  font-size: 0.95rem;
-  letter-spacing: 0.4px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
 
   color: #fff;
-
   background: linear-gradient(
     135deg,
-    #ff7aa8,   /* pink */
+    #ff7aa8,
     #ff9bbf,
-    #ff5f7e    /* deeper pink */
+    #ff5f7e
   );
+
+  box-shadow:
+    0 8px 22px rgba(255, 95, 126, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
 
   box-shadow:
     0 6px 18px rgba(255, 95, 126, 0.45),
