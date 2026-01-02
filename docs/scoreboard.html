@@ -4,24 +4,25 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Scoreboard • Hack My Heart CTF</title>
-  <link rel="stylesheet" href="assets/style.css?v=12"/>
+  <link rel="stylesheet" href="assets/style.css?v=13"/>
 </head>
-<body>
-  <header class="wrap header-bar">
-    <div class="header-left">
+
+<body class="scoreboard-page">
+  <header class="wrap header-bar header-stack">
+    <div class="header-left header-left-stack">
       <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
 
       <div class="title-block">
         <h1 class="ombre-title">Scoreboard</h1>
         <p class="sub">Live leaderboard (updates after each submission).</p>
-      </div>
-    </div>
 
-    <div class="links">
-      <a class="btn" href="index.html">Challenges</a>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform?usp=dialog" target="_blank" rel="noopener">Submit Flags</a>
-      <a class="btn" href="scoreboard.html">Scoreboard</a>
-      <a class="btn" href="rules.html">Rules</a>
+        <!-- ✅ Buttons LEFT, under title/logo -->
+        <div class="links links-under">
+          <a class="btn" href="index.html">Challenges</a>
+          <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdJnzlEjj_6VuNpsLuj85gKa5NOuNpdw7XB567A7jFfqqm54Q/viewform?usp=dialog" target="_blank" rel="noopener">Submit Flags</a>
+          <a class="btn" href="rules.html">Rules</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -30,7 +31,7 @@
       <iframe
         title="Hack My Heart CTF Scoreboard"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR0zHUvquXqNT3xqpjIgqBVFHlMuxw2cKzSh61XjDzvJxPxmr3LXXt_J5l8VzKPNAVlic14Lhmm_tWA/pubhtml?gid=671659319&single=true"
-        class="scoreboard-frame">
+        class="scoreboard-frame-big">
       </iframe>
     </div>
   </main>
