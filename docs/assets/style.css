@@ -24,10 +24,11 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  background: radial-gradient(900px 500px at 20% 0%, rgba(255, 95, 162, 0.12), transparent 60%),
-              radial-gradient(900px 500px at 80% 10%, rgba(255, 184, 107, 0.10), transparent 60%),
-              radial-gradient(900px 500px at 60% 100%, rgba(255, 77, 77, 0.08), transparent 55%),
-              var(--bg);
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(255, 95, 162, 0.12), transparent 60%),
+    radial-gradient(900px 500px at 80% 10%, rgba(255, 184, 107, 0.10), transparent 60%),
+    radial-gradient(900px 500px at 60% 100%, rgba(255, 77, 77, 0.08), transparent 55%),
+    var(--bg);
   color: var(--text);
 }
 
@@ -60,7 +61,7 @@ body {
   width: 96px;
   height: 96px;
   object-fit: contain;
-  border-radius: 22px;
+  border-radius: 22px; /* rounded edges */
   background: #0f1623;
   border: 2px solid var(--border);
   padding: 10px;
@@ -73,29 +74,21 @@ body {
   gap: 6px;
 }
 
-/* Ombre title: pink -> gold -> red */
+/* Ombre title: pink -> gold -> red (with descender-safe spacing) */
 .ombre-title {
   margin: 0;
-  padding-bottom: 0.15em;          
+  padding-bottom: 0.15em;     /* prevents y/g/p clipping */
   font-size: 2.45rem;
   font-weight: 900;
-
-  line-height: 1.25;               
+  line-height: 1.25;          /* prevents descender clipping */
   letter-spacing: 0.8px;
 
-  background: linear-gradient(
-    90deg,
-    #ff5fa2,   /* pink */
-    #ffb86b,   /* gold */
-    #ff4d4d    /* red */
-  );
-
+  background: linear-gradient(90deg, #ff5fa2, #ffb86b, #ff4d4d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 
-  /* Prevent clipping */
   overflow: visible;
   display: inline-block;
 
@@ -177,7 +170,7 @@ body {
   background: linear-gradient(180deg, rgba(15, 22, 42, 0.92), rgba(15, 22, 42, 0.72));
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 14px 14px 12px;
+  padding: 14px 14px 16px;
   box-shadow: 0 18px 40px var(--shadow);
 }
 
@@ -199,6 +192,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* If you removed the card description from HTML, this won’t show anyway */
 .desc {
   color: rgba(233, 238, 252, 0.86);
   line-height: 1.35;
@@ -215,35 +209,22 @@ body {
   white-space: nowrap;
 }
 
-/* Actions */
+/* Actions row */
 .actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 10px;
+  align-items: center;
 }
 
 .link {
   color: var(--link);
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .link:hover { color: var(--linkHover); }
-
-/* Hint box */
-.hint {
-  margin-top: 10px;
-  border-top: 1px dashed rgba(255, 95, 162, 0.22);
-  padding-top: 10px;
-  color: rgba(233, 238, 252, 0.85);
-}
-
-.hint summary {
-  cursor: pointer;
-  color: #ffd2df;
-  font-weight: 800;
-}
 
 code {
   background: rgba(0,0,0,0.25);
@@ -253,19 +234,59 @@ code {
   color: #ffe3ec;
 }
 
-/* ===== Inline "Start Challenge" dropdown panel ===== */
+/* ============================= */
+/* Cute Pink "Start Challenge" Button */
+/* ============================= */
 
-.link-like {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  font: inherit;
+.start-btn {
+  appearance: none;
+  border: none;
   cursor: pointer;
-  color: var(--link);
-  font-weight: 700;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+
+  color: #fff;
+
+  background: linear-gradient(135deg, #ff7aa8, #ff9bbf, #ff5f7e);
+
+  box-shadow:
+    0 6px 18px rgba(255, 95, 126, 0.45),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
 }
 
-.link-like:hover { color: var(--linkHover); }
+.start-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 8px 24px rgba(255, 95, 126, 0.55),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 12px rgba(255, 95, 126, 0.4),
+    inset 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Optional open-state */
+.start-btn.open {
+  background: linear-gradient(135deg, #ff4d6d, #ff6f91, #ff8fab);
+}
+
+/* ============================= */
+/* Inline Briefing Panel (opens under a card) */
+/* ============================= */
 
 .briefing-panel {
   margin-top: 10px;
@@ -311,6 +332,7 @@ code {
   margin: 8px 0 6px;
 }
 
+/* Tools at bottom of briefing panel */
 .briefing-tools {
   display: flex;
   gap: 10px;
@@ -318,7 +340,7 @@ code {
   margin-top: 10px;
 }
 
-/* Make these feel like small buttons */
+/* Small button styling used inside briefing panel (Copy ID / Submit Flag) */
 .copy-btn {
   display: inline-block;
   padding: 9px 12px;
@@ -341,4 +363,18 @@ code {
 
 .copy-btn.ghost {
   background: transparent;
+}
+
+/* Hint styling (used both in cards and panel) */
+.hint {
+  margin-top: 10px;
+  border-top: 1px dashed rgba(255, 95, 162, 0.22);
+  padding-top: 10px;
+  color: rgba(233, 238, 252, 0.85);
+}
+
+.hint summary {
+  cursor: pointer;
+  color: #ffd2df;
+  font-weight: 800;
 }
