@@ -359,11 +359,13 @@ button.link {
   cursor: pointer;
 }
 
-/* ===== Rules Page Button Row ===== */
+/* ===== Left-aligned header buttons (Rules page) ===== */
 
-.rules-nav {
+.header-stacked {
+  align-items: flex-start;
+}
+
+.links-left {
   margin-top: 14px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
 }
