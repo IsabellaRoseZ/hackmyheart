@@ -3,7 +3,7 @@
   --panel: #0f162a;
   --panel2: #101b33;
   --text: #e9eefc;
-  --muted: #a9b6d4; 
+  --muted: #a9b6d4;
 
   --border: #223055;
   --shadow: rgba(0,0,0,0.35);
@@ -253,80 +253,96 @@ code {
   color: #ffe3ec;
 }
 
-/* ===== Inline "Start Challenge" dropdown panel ===== */
+/* ===== Modal (Briefing Popup) ===== */
 
-.briefing-panel {
-  margin-top: 10px;
-  border-top: 1px dashed rgba(255, 95, 162, 0.22);
-  padding-top: 12px;
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
   display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
 }
 
-.briefing-panel.open {
-  display: block;
-  animation: dropIn 140ms ease-out;
-}
-
-@keyframes dropIn {
-  from { transform: translateY(-6px); opacity: 0.4; }
-  to   { transform: translateY(0); opacity: 1; }
-}
-
-.briefing-text {
-  color: rgba(233, 238, 252, 0.92);
-  line-height: 1.45;
-  margin-bottom: 10px;
-}
-
-.briefing-links {
+.modal-backdrop.open {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 10px 0 8px;
 }
 
-.briefing-link {
-  color: var(--link);
-  text-decoration: none;
-  font-weight: 800;
+.modal {
+  width: min(860px, 100%);
+  background: linear-gradient(180deg, rgba(15, 22, 42, 0.96), rgba(15, 22, 42, 0.86));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+  padding: 16px 16px 14px;
+  position: relative;
 }
 
-.briefing-link:hover { color: var(--linkHover); }
+.modal-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
 
-.briefing-muted {
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  padding-right: 36px;
+}
+
+.modal-title {
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.modal-meta {
   color: var(--muted);
   font-size: 0.95rem;
-  margin: 8px 0 6px;
 }
 
-.briefing-tools {
+.modal-brief {
+  margin-top: 14px;
+  color: rgba(233, 238, 252, 0.90);
+  line-height: 1.45;
+}
+
+.modal-links {
+  margin-top: 14px;
+}
+
+.modal-actions {
+  margin-top: 16px;
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
-/* Make these feel like small buttons */
-.copy-btn {
-  display: inline-block;
-  padding: 9px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: var(--text);
-  background: linear-gradient(180deg, var(--btn), #101a35);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 24px var(--shadow);
-  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-  cursor: pointer;
-  font-weight: 800;
-}
-
-.copy-btn:hover {
-  background: linear-gradient(180deg, var(--btnHover), #121f42);
-  border-color: #2a3b6b;
-  transform: translateY(-1px);
-}
-
-.copy-btn.ghost {
+.btn.ghost {
   background: transparent;
+  border: 1px solid var(--border);
+}
+
+.link-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
