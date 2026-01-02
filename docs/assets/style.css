@@ -443,3 +443,22 @@ button.link {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+/* Only one card expanded: visually de-emphasize others */
+.card.collapsed {
+  opacity: 0.55;
+  filter: saturate(0.75);
+}
+
+/* Make open one pop */
+.card.active {
+  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
+  border-color: rgba(255, 122, 168, 0.35);
+}
+
+/* Disable other Start buttons while one is open */
+.start-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
