@@ -422,3 +422,24 @@ button.link {
   background: #fff;               /* google sheet background */
 }
 
+/* ===== Force buttons under title, left-aligned ===== */
+
+/* Stack header vertically on scoreboard page */
+.scoreboard-page .header-bar.header-stack {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Make sure left block stays left */
+.scoreboard-page .header-left {
+  align-items: flex-start;
+}
+
+/* Buttons row under title */
+.scoreboard-page .links-under {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
