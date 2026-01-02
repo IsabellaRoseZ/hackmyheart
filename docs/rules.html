@@ -4,26 +4,27 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Rules • Hack My Heart CTF</title>
-  <link rel="stylesheet" href="assets/style.css?v=7"/>
+  <link rel="stylesheet" href="assets/style.css?v=10"/>
 </head>
 <body>
   <header class="wrap header-bar">
-  <div class="header-left">
-    <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
-    <div class="title-block">
-      <h1 class="ombre-title">Rules</h1>
-      <p class="sub">Play fair. Hack systems, not people. 💖</p>
+    <div class="header-left">
+      <img src="assets/logo.png" alt="Hack My Heart CTF logo" class="logo"/>
 
-      <!-- NEW: Navigation buttons under title -->
-      <div class="rules-nav">
-        <a class="btn" href="index.html">Challenges</a>
-        <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flags</a>
-        <a class="btn" href="scoreboard.html">Scoreboard</a>
-        <a class="btn" href="rules.html">Rules</a>
+      <div class="title-block">
+        <h1 class="ombre-title">Rules</h1>
+        <p class="sub">Play fair. Hack systems, not people. 💖</p>
       </div>
     </div>
-  </div>
-</header>
+
+    <!-- ✅ Match homepage: buttons on the right -->
+    <div class="links">
+      <a class="btn" href="index.html">Challenges</a>
+      <a class="btn" href="YOUR_GOOGLE_FORM_LINK" target="_blank" rel="noopener">Submit Flags</a>
+      <a class="btn" href="scoreboard.html">Scoreboard</a>
+      <a class="btn" href="rules.html">Rules</a>
+    </div>
+  </header>
 
   <main class="wrap">
     <section class="card rules">
@@ -39,8 +40,8 @@
       <ul>
         <li>Submit flags through the form using your <strong>university username</strong> (the part before <code>@</code>).</li>
         <li>Only <strong>correct</strong> flags add points. Wrong flags don’t subtract points.</li>
-        <li>Duplicate correct submissions for the same challenge are ignored (no extra points).</li>
-        <li>If your flag isn’t being accepted, double-check:
+        <li>Duplicate correct submissions for the same challenge are ignored.</li>
+        <li>If your flag isn’t accepted, double-check:
           <ul>
             <li>Challenge ID matches exactly</li>
             <li>No extra spaces at the beginning/end</li>
@@ -55,22 +56,21 @@
       <ul>
         <li>Using open-source tools (CyberChef, Wireshark, Ghidra, Python, etc.).</li>
         <li>Searching the web for general reference (OSINT challenges may require it).</li>
-        <li>Collaborating in a learning-friendly way (talking through concepts), <strong>if you don’t share flags or exact solutions</strong>.</li>
+        <li>Discussing concepts and learning together, <strong>without sharing flags or exact step-by-step solutions</strong>.</li>
       </ul>
 
       <h3>🚫 Not Allowed</h3>
       <ul>
         <li><strong>Do not attack</strong> real services, accounts, networks, or any system outside this CTF.</li>
         <li>No phishing, doxxing, or targeting real people.</li>
-        <li>No sharing flags, private solution writeups, or “here’s the exact command/result” answers during the event.</li>
-        <li>No brute forcing logins on real websites. (If a challenge involves guessing, it will be self-contained.)</li>
+        <li>No sharing flags, private solution writeups, or exact commands/results during the event.</li>
         <li>No automated traffic that could disrupt hosting (DoS/DDoS behavior).</li>
       </ul>
 
       <h2>Hints &amp; Integrity</h2>
       <ul>
         <li>Some challenges include a hint after you click <strong>Start Challenge</strong>.</li>
-        <li>If you think a challenge is broken or ambiguous, report it to the organizers with:
+        <li>If you think a challenge is broken or ambiguous, report it with:
           <ul>
             <li>Challenge ID</li>
             <li>What you tried</li>
@@ -83,19 +83,19 @@
       <h2>Privacy</h2>
       <ul>
         <li>The scoreboard shows your <strong>username</strong> (not your full email).</li>
-        <li>Your raw form responses are visible only to organizers.</li>
+        <li>Raw form responses are visible only to organizers.</li>
       </ul>
 
       <h2>Have Fun 💘</h2>
       <p class="muted">
-        The goal is to learn, explore, and enjoy the vibes. If you get stuck, take a breath,
-        try a different angle, and remember: sometimes the easiest way into a heart is through the metadata.
+        The goal is to learn, explore, and enjoy the vibes. If you get stuck, try a different angle —
+        sometimes the easiest way into a heart is through the metadata.
       </p>
     </section>
   </main>
 
   <style>
-    /* Small rules-page tweaks that reuse your theme */
+    /* Small rules-page spacing, keeps theme consistent */
     .rules h2 { margin-top: 0; }
     .rules h3 { margin-top: 18px; }
     .rules ul { line-height: 1.5; }
