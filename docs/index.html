@@ -77,12 +77,9 @@
               <span class="pill">${escapeHtml(x.difficulty)}</span>
             </div>
 
-            <p class="desc">${escapeHtml(x.prompt || "")}</p>
-
             <button class="link start-btn" data-id="${escapeHtml(x.id)}">
               ${isOpen ? "Close Challenge" : "Start Challenge"}
             </button>
-              <a class="link" href="${FORM_LINK}" target="_blank" rel="noopener">Submit Flag</a>
             </div>
 
             <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
