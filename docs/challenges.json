@@ -1,0 +1,68 @@
+[
+  {
+    "id": "CRY-01",
+    "title": "Payroll Whisper",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Aurelius HR exported an 'encrypted' payroll note. Recover the flag.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/payroll_whisper.zip",
+    "hint": "They reused a key… and the file header is predictable.",
+    "tags": ["xor", "known-plaintext"]
+  },
+  {
+    "id": "FOR-01",
+    "title": "Coffee Shop Packet",
+    "category": "Forensics",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "A suspicious PCAP was captured. Find the leaked credentials and flag.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/coffeeshop.pcapng",
+    "hint": "Search for HTTP form posts or basic auth.",
+    "tags": ["pcap", "wireshark"]
+  },
+  {
+    "id": "WEB-01",
+    "title": "Minified Secrets",
+    "category": "Web",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "You found the frontend bundle. Identify the hardcoded admin token.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/web01_bundle.js",
+    "hint": "Look for strings that resemble JWTs or API keys.",
+    "tags": ["javascript", "secrets"]
+  },
+  {
+    "id": "OSINT-01",
+    "title": "Badge Photo",
+    "category": "OSINT",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "An employee badge photo has metadata. Extract the flag.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/badge.jpg",
+    "hint": "EXIF can contain comments, GPS, or hidden fields.",
+    "tags": ["exif", "metadata"]
+  },
+  {
+    "id": "RE-01",
+    "title": "License Check",
+    "category": "Reverse",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Reverse the binary’s license check to recover the flag.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/license_check",
+    "hint": "Strings → main → compare loop. Patch or solve.",
+    "tags": ["ghidra", "strings"]
+  },
+  {
+    "id": "LIN-01",
+    "title": "Cron Clues",
+    "category": "Linux",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "A log snippet shows a scheduled task gone wrong. Find the flag.",
+    "download": "YOUR_RELEASE_OR_DRIVE_LINK/cron_clues.log",
+    "hint": "Think PATH and environment assumptions.",
+    "tags": ["logs", "bash"]
+  }
+]
