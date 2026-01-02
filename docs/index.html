@@ -55,60 +55,55 @@
         .replaceAll("'", "&#039;");
     }
 
-    function render() {
-      const q = search.value.toLowerCase().trim();
-      const c = cat.value;
-
-      const filtered = all.filter(x => {
-        const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
-        return (!q || hay.includes(q)) && (!c || x.category === c);
+  function render() {
+    const q = search.value.toLowerCase().trim();
+    const c = cat.value;
+  
+    const filtered = all.filter(x => {
+      const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
+      return (!q || hay.includes(q)) && (!c || x.category === c);
+    });
+  
+    grid.innerHTML = filtered.map(x => {
+      const isOpen = openId === x.id;
+      const isOtherWhenOpen = !!openId && !isOpen;
+  
+      return `
+        <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
+          <div class="row">
+            <div>
+              <div class="title">${escapeHtml(x.title)}</div>
+              <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
+            </div>
+            <span class="pill">${escapeHtml(x.difficulty)}</span>
+          </div>
+  
+          <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
+            ${isOpen ? "Close Challenge" : "Start Challenge"}
+          </button>
+  
+          <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
+            ${isOpen ? briefingHtml(x) : ""}
+          </div>
+        </article>
+      `;
+    }).join("");
+  
+    document.querySelectorAll(".start-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-id");
+        openId = (openId === id) ? null : id;
+        render();
+  
+        if (openId) {
+          const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+          const panel = card?.querySelector(".briefing-panel");
+          panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
       });
-
-      grid.innerHTML = filtered.map(x => {
-        const isOpen = openId === x.id;
-
-        return `
-          const isOpen = openId === x.id;
-          const isOtherWhenOpen = openId && !isOpen;
-        return `
-          <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
-          
-            <div class="row">
-              <div>
-                <div class="title">${escapeHtml(x.title)}</div>
-                <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
-              </div>
-              <span class="pill">${escapeHtml(x.difficulty)}</span>
-            </div>
-
-            <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
-              ${isOpen ? "Close Challenge" : "Start Challenge"}
-            </button>
-            </div>
-
-            <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
-              ${isOpen ? briefingHtml(x) : ""}
-            </div>
-          </article>
-        `;
-      }).join("");
-
-      // Wire up Start Challenge buttons
-      document.querySelectorAll(".start-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-id");
-          openId = (openId === id) ? null : id;
-          render();
-          // scroll the opened panel into view slightly (nice UX)
-          if (openId) {
-            const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
-            const panel = card?.querySelector(".briefing-panel");
-            panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          }
-        });
-      });
-    }
-
+    });
+  }
+    
     function briefingHtml(x) {
       const parts = [];
 
