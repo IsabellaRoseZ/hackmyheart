@@ -79,10 +79,9 @@
 
             <p class="desc">${escapeHtml(x.prompt || "")}</p>
 
-            <div class="actions">
-              <button class="link link-like start-btn" data-id="${escapeHtml(x.id)}">
-                ${isOpen ? "Close" : "Start Challenge"}
-              </button>
+            <button class="btn start-btn" data-id="${escapeHtml(x.id)}">
+              ${isOpen ? "Close" : "Start Challenge"}
+            </button>
               <a class="link" href="${FORM_LINK}" target="_blank" rel="noopener">Submit Flag</a>
             </div>
 
