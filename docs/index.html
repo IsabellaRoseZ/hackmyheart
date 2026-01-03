@@ -55,74 +55,73 @@
         .replaceAll("'", "&#039;");
     }
 
-  function render() {
-    const q = search.value.toLowerCase().trim();
-    const c = cat.value;
-  
-    const filtered = all.filter(x => {
-      const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
-      return (!q || hay.includes(q)) && (!c || x.category === c);
-    });
+function render() {
+  const q = search.value.toLowerCase().trim();
+  const c = cat.value;
 
-    // Close open challenge when clicking outside any card
+  const filtered = all.filter(x => {
+    const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
+    return (!q || hay.includes(q)) && (!c || x.category === c);
+  });
+
+  grid.innerHTML = filtered.map(x => {
+    const isOpen = openId === x.id;
+    const isOtherWhenOpen = !!openId && !isOpen;
+
+    return `
+      <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
+        <div class="row">
+          <div>
+            <div class="title">${escapeHtml(x.title)}</div>
+            <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
+          </div>
+          <span class="pill">${escapeHtml(x.difficulty)}</span>
+        </div>
+
+        <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
+          ${isOpen ? "Close Challenge" : "Start Challenge"}
+        </button>
+
+        <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
+          ${isOpen ? briefingHtml(x) : ""}
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  // Wire up Start/Close buttons
+  document.querySelectorAll(".start-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation(); // IMPORTANT: prevents immediate close
+      const id = btn.getAttribute("data-id");
+      openId = (openId === id) ? null : id;
+      render();
+
+      if (openId) {
+        const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+        const panel = card?.querySelector(".briefing-panel");
+        panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  });
+
+  // Prevent clicks inside cards from bubbling to document
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", (e) => e.stopPropagation());
+  });
+}
+    
+    // Close open challenge when clicking anywhere outside the open card
     document.addEventListener("click", (e) => {
-      if (!openId) return; // nothing open
+      if (!openId) return;
     
       const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
       if (!activeCard) return;
     
-      // If click is outside the active card, close it
       if (!activeCard.contains(e.target)) {
         openId = null;
         render();
       }
-    });
-  
-    grid.innerHTML = filtered.map(x => {
-      const isOpen = openId === x.id;
-      const isOtherWhenOpen = !!openId && !isOpen;
-  
-      return `
-        <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
-          <div class="row">
-            <div>
-              <div class="title">${escapeHtml(x.title)}</div>
-              <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
-            </div>
-            <span class="pill">${escapeHtml(x.difficulty)}</span>
-          </div>
-  
-          <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
-            ${isOpen ? "Close Challenge" : "Start Challenge"}
-          </button>
-  
-          <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
-            ${isOpen ? briefingHtml(x) : ""}
-          </div>
-        </article>
-      `;
-    }).join("");
-  
-    document.querySelectorAll(".start-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-id");
-        openId = (openId === id) ? null : id;
-        render();
-  
-        if (openId) {
-          const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
-          const panel = card?.querySelector(".briefing-panel");
-          panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }
-      });
-    });
-  }
-
-    // Prevent clicks inside cards from closing them
-    document.querySelectorAll(".card").forEach(card => {
-      card.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
     });
 
     function briefingHtml(x) {
