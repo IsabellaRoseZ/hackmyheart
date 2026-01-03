@@ -104,25 +104,20 @@ function render() {
       }
     });
   });
-
-  // Prevent clicks inside cards from bubbling to document
-  document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("click", (e) => e.stopPropagation());
-  });
 }
     
-    // Close open challenge when clicking anywhere outside the open card
-    document.addEventListener("click", (e) => {
-      if (!openId) return;
-    
-      const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
-      if (!activeCard) return;
-    
-      if (!activeCard.contains(e.target)) {
-        openId = null;
-        render();
-      }
-    });
+  // Close open challenge when clicking anywhere outside the open card
+  document.addEventListener("click", (e) => {
+    if (!openId) return;
+  
+    const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+    if (!activeCard) return;
+  
+    if (!activeCard.contains(e.target)) {
+      openId = null;
+      render();
+    }
+  }, true); // ✅ capture phase
 
     function briefingHtml(x) {
       const parts = [];
