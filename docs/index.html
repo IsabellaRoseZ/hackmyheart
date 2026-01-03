@@ -63,6 +63,20 @@
       const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
       return (!q || hay.includes(q)) && (!c || x.category === c);
     });
+
+    // Close open challenge when clicking outside any card
+    document.addEventListener("click", (e) => {
+      if (!openId) return; // nothing open
+    
+      const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+      if (!activeCard) return;
+    
+      // If click is outside the active card, close it
+      if (!activeCard.contains(e.target)) {
+        openId = null;
+        render();
+      }
+    });
   
     grid.innerHTML = filtered.map(x => {
       const isOpen = openId === x.id;
@@ -103,7 +117,14 @@
       });
     });
   }
-    
+
+    // Prevent clicks inside cards from closing them
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    });
+
     function briefingHtml(x) {
       const parts = [];
 
