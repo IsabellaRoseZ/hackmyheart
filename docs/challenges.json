@@ -71,7 +71,8 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Wolverine has secretly sent you a Valentine note. Can you find the secret message in his note?",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/cron_clues.log",
+    "downloads": [{ "label": "x-tra_special.png", "url": "downloads/x-tra_special.png" }],
+    "preview_image": "downloads/x-tra_special.png",
     "hint": "Think PATH and environment assumptions.",
     "tags": ["logs", "bash"]
   }
