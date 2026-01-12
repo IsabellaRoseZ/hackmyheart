@@ -77,9 +77,9 @@
     "tags": ["logs", "bash"]
   },
   {
-    "id": "LOG-05",
+    "id": "FOR-05",
     "title": "Droids, Don’t Break Hearts",
-    "category": "Log Analysis",
+    "category": "Forensics",
     "difficulty": "Hard",
     "points": 250,
     "prompt": "After a Valentine surprise went wrong, both droids submitted logs. One is lying.\n\n--- r2d2.log ---\n[19:03:11] action=deliver package=chocolates recipient=padme status=ok\n[19:03:15] action=override door=balcony status=ok\n\n--- c3po.log ---\n[19:03:11] action=translate message=love_note status=ok\n[19:03:12] action=translate message=love_note status=ok\n[19:03:13] action=translate message=love_note status=ok\n\n--- security.log ---\n[19:03:15] alert=balcony_door_forced_open\n\nWhich droid’s log contradicts the security system?\nFormat: HMH{droid}",
