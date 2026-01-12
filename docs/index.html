@@ -132,6 +132,15 @@ function render() {
         `);
       }
 
+      // Inline image preview (optional)
+      if (x.preview_image) {
+        parts.push(`
+          <div class="briefing-preview">
+            <img src="${escapeHtml(x.preview_image)}" alt="Challenge image" class="briefing-img"/>
+          </div>
+        `);
+      }
+
       // Downloads: support downloads[] or download string
       const links = [];
 
