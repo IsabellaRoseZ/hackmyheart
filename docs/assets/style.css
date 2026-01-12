@@ -463,15 +463,32 @@ button.link {
   pointer-events: none;
 }
 
+/* ===== Stego / Image Preview (Always Fit Box) ===== */
+
 .briefing-preview {
-  margin: 12px 0 8px;
+  margin: 12px 0 10px;
+  max-width: 100%;
+  
+  /* visual container */
+  background: rgba(15, 22, 42, 0.65);
+  border: 1px solid rgba(255, 95, 162, 0.22);
+  border-radius: 14px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Image always fits container */
 .briefing-img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 95, 162, 0.22);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  max-width: 100%;
+  max-height: 360px;      /* 👈 limits tall images */
+  width: auto;
+  height: auto;
+
+  object-fit: contain;    /* 👈 key line: no cropping, no stretching */
+  border-radius: 10px;
+
   display: block;
 }
