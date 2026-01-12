@@ -1,13 +1,13 @@
 [
   {
   "id": "CRY-01",
-  "title": "Payroll Whisper",
+  "title": "Hearts on the Wire",
   "category": "Crypto",
   "points": 100,
   "difficulty": "Easy",
-  "prompt": "Decrypt the payroll note.",
-  "briefing": "Aurelius HR reused a weak cipher. Recover the plaintext and submit FLAG{...}.",
-  "hint": "Think XOR and known plaintext."
+  "prompt": "Decrypt the message.",
+  "briefing": "This base64 string hides the flag:\n\nU0dWc2JHOGdWMjl5YkdRPQ==\n\nDecode layers until you find FLAG{...}.",
+  "hint": "Try Base64 → maybe another encoding after that."
   },
   {
     "id": "FOR-01",
