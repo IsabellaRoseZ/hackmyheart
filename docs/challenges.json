@@ -10,61 +10,6 @@
     "hint": "Try Base64 → maybe another encoding after that."
   },
   {
-    "id": "FOR-01",
-    "title": "Coffee Shop Packet",
-    "category": "Forensics",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "A suspicious PCAP was captured. Find the leaked credentials and flag.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/coffeeshop.pcapng",
-    "hint": "Search for HTTP form posts or basic auth.",
-    "tags": ["pcap", "wireshark"]
-  },
-  {
-    "id": "WEB-01",
-    "title": "Minified Secrets",
-    "category": "Web",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "You found the frontend bundle. Identify the hardcoded admin token.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/web01_bundle.js",
-    "hint": "Look for strings that resemble JWTs or API keys.",
-    "tags": ["javascript", "secrets"]
-  },
-  {
-    "id": "OSINT-01",
-    "title": "Badge Photo",
-    "category": "OSINT",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "An employee badge photo has metadata. Extract the flag.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/badge.jpg",
-    "hint": "EXIF can contain comments, GPS, or hidden fields.",
-    "tags": ["exif", "metadata"]
-  },
-  {
-    "id": "RE-01",
-    "title": "License Check",
-    "category": "Reverse",
-    "difficulty": "Medium",
-    "points": 200,
-    "prompt": "Reverse the binary’s license check to recover the flag.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/license_check",
-    "hint": "Strings → main → compare loop. Patch or solve.",
-    "tags": ["ghidra", "strings"]
-  },
-  {
-    "id": "LIN-01",
-    "title": "Cron Clues",
-    "category": "Linux",
-    "difficulty": "Medium",
-    "points": 200,
-    "prompt": "A log snippet shows a scheduled task gone wrong. Find the flag.",
-    "download": "YOUR_RELEASE_OR_DRIVE_LINK/cron_clues.log",
-    "hint": "Think PATH and environment assumptions.",
-    "tags": ["logs", "bash"]
-  },
-  {
     "id": "STEG-01",
     "title": "X-tra Special",
     "category": "Steganography",
@@ -73,17 +18,7 @@
     "prompt": "Wolverine has secretly sent you a Valentine note. Can you find the secret message in his note?",
     "downloads": [{ "label": "x-tra_special.png", "url": "downloads/x-tra_special.png" }],
     "preview_image": "downloads/x-tra_special.png",
-    "hint": "Think PATH and environment assumptions.",
-    "tags": ["logs", "bash"]
-  },
-  {
-    "id": "FOR-05",
-    "title": "Droids, Don’t Break Hearts",
-    "category": "Forensics",
-    "difficulty": "Hard",
-    "points": 250,
-    "prompt": "After a Valentine surprise went wrong, both droids submitted logs. One is lying.\n\n--- r2d2.log ---\n[19:03:11] action=deliver package=chocolates recipient=padme status=ok\n[19:03:15] action=override door=balcony status=ok\n\n--- c3po.log ---\n[19:03:11] action=translate message=love_note status=ok\n[19:03:12] action=translate message=love_note status=ok\n[19:03:13] action=translate message=love_note status=ok\n\n--- security.log ---\n[19:03:15] alert=balcony_door_forced_open\n\nWhich droid’s log contradicts the security system?\nFormat: HMH{droid}",
-    "hint": "Compare actions against the security alert."
+    "hint": "Think PATH and environment assumptions."
   },
   {
     "id": "BIN-03",
@@ -95,4 +30,13 @@
     "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }],
     "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
   }
+    {
+    "id": "CRY-12",
+    "title": "Hunny, I Encrypted the Flag",
+    "category": "Cryptography",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Pooh Bear has been sent a message from a mysterious wizard. The wizard covered the message in magical HUNNY. Here is the message:\n4i 5u 4o 54 53 59 4o 57 4y 42 32 47 53 59 53 48 4j 4u 59 47 49 33 42 5n 4r 35 4c 45 51 57 52 53 4j 49 5u 56 55 34 43 59 47 4n 53 48 55 5n 4a 4l 47 46 54 47 47 4x 53 32 4s 52 52 46 4s 53 52 5y.\n\nThe wizard has provided this message for Pooh:\nOh d dear… the message was first t turned on its head at bash, where each little letter scurried off to meet its distant twin.\nTh then, with a puff of magic, it was lifted into a broader shape, padded ever so carefully until it fit a familiar sixty-four symbol mold.\nN next, the symbols were gently squeezed together, becoming a simpler pattern of thirty-two marks, before being hardened into raw hex, if you please.\nA and finally, an old Vigenere charm was wrapped around the whole thing, with a quiet key guiding the very last layer of disguise.\n\nHelp Pooh decode the message so he can know what it says. Maybe use CyberChef.",
+    "hint": "Did you find the magical key for Vigenere?"
+  },
 ]
