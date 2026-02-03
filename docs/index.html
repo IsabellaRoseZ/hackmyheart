@@ -85,7 +85,6 @@ function render() {
         <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
           ${isOpen ? briefingHtml(x) : ""}
         </div>
-
       </article>
     `;
   }).join("");
@@ -201,6 +200,7 @@ function render() {
 
     search.addEventListener("input", () => { openId = null; render(); });
     cat.addEventListener("change", () => { openId = null; render(); });
+
   </script>
 </body>
 </html>
