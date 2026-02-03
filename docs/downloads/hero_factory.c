@@ -188,7 +188,7 @@ int main(void) {
     if (lf.authorized == 'Y') {
         static const char *blocks[] = {
             aux_sequence_b, (const char *)diag_block_a, service_blob_d,
-            (const char *)diag_block_e, service_blob_b, aux_sequence_c, // XPlode: Careful here… BOOM! Just kidding, but maybe the next line matters
+            (const char *)diag_block_e, service_blob_b, aux_sequence_c, // XPlode: Careful here... BOOM! Just kidding, but maybe the next line matters
             service_blob_e, (const char *)diag_block_d, aux_sequence_a,
             (const char *)diag_block_b, service_blob_c, aux_sequence_e,
             service_blob_a, aux_sequence_d, (const char *)diag_block_c
@@ -208,4 +208,5 @@ int main(void) {
 
     return 0;
 }
+
 // Last time, I promise: FLAG{run_the_code_with_your_heart}
