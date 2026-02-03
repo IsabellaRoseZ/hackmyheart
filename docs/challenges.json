@@ -84,5 +84,15 @@
     "points": 250,
     "prompt": "After a Valentine surprise went wrong, both droids submitted logs. One is lying.\n\n--- r2d2.log ---\n[19:03:11] action=deliver package=chocolates recipient=padme status=ok\n[19:03:15] action=override door=balcony status=ok\n\n--- c3po.log ---\n[19:03:11] action=translate message=love_note status=ok\n[19:03:12] action=translate message=love_note status=ok\n[19:03:13] action=translate message=love_note status=ok\n\n--- security.log ---\n[19:03:15] alert=balcony_door_forced_open\n\nWhich droid’s log contradicts the security system?\nFormat: HMH{droid}",
     "hint": "Compare actions against the security alert."
+  },
+  {
+  "id": "BIN-03",
+  "title": "Heart Over Hardware",
+  "category": "Binary Exploitation",
+  "difficulty": "Hard",
+  "points": 300,
+  "prompt": "Dear rookies,\nI’ve intercepted a C code from Von Nebula, and it’s up to you to analyze it.\n\nTake the code and paste it into an online C editor, like OnlineGDB.\nIf you’re using OnlineGDB, make sure you have two inputs, with the second one on the line below the first.\nStudy the code carefully as it contains information you will need later in CyberChef and stay alert because Corroder, Meltdown, Rotor, and XPlode are likely to try and distract you.\n\nI won’t be on this mission with you this time; I’m on the front line trying to stop Von Nebula from opening a blackhole vortex.\nI can’t leave the battle, and I don’t know the exact location of the vortex controls.\n\nThe flag you recover from this code is the key to shutting down the vortex.\nIf you don’t get it in time, Von Nebula could succeed, the vortex will form, and we won’t be able to celebrate Valentine’s Day.\n\nMove fast, stay sharp, and complete the mission rookies.\nThe fate of the galaxy depends on you.\n\n- Stormer"
+  "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }]
+  "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
   }
 ]
