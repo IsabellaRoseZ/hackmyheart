@@ -500,8 +500,8 @@ button.link {
   border-top: 1px solid #ccc;
   border-radius: 0 0 8px 8px;
   outline: none;
-  background: inherit; /* use card background instead of changing colors */
-  color: inherit;      /* text uses card color */
+  background: inherit;
+  color: inherit;
 }
 
 .briefing-text, .briefing-preview, .briefing-links, .hint p, pre {
