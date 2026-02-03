@@ -82,22 +82,13 @@ function render() {
           ${isOpen ? "Close Challenge" : "Start Challenge"}
         </button>
 
-        <div class="briefing-panel" id="panel-${escapeHtml(x.id)}"></div>
+        <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
+          ${isOpen ? briefingHtml(x) : ""}
+        </div>
+
       </article>
     `;
   }).join("");
-  
-  filtered.forEach(x => {
-  const panel = document.getElementById(`panel-${x.id}`);
-  if (!panel) return;
-  if (openId === x.id) {
-    panel.classList.add("open");
-    panel.innerHTML = briefingHtml(x);
-  } else {
-    panel.classList.remove("open");
-    panel.innerHTML = "";
-  }
-});
 
   // Wire up Start/Close buttons
   document.querySelectorAll(".start-btn").forEach(btn => {
@@ -210,48 +201,6 @@ function render() {
 
     search.addEventListener("input", () => { openId = null; render(); });
     cat.addEventListener("change", () => { openId = null; render(); });
-
-    function enablePanelScroll() {
-    document.querySelectorAll(".briefing-panel").forEach(panel => {
-      panel.setAttribute("tabindex", "0");
-    });
-
-    const observer = new MutationObserver(() => {
-      const openPanel = document.querySelector(".briefing-panel.open");
-      if (openPanel) {
-        openPanel.focus();
-      }
-    });
-    observer.observe(document.getElementById("grid"), { childList: true, subtree: true });
-
-    document.addEventListener("keydown", (e) => {
-      const panel = document.querySelector(".briefing-panel.open:focus");
-      if (!panel) return;
-
-      const scrollAmount = e.key === "PageDown" || e.key === "PageUp" ? 100 : 20;
-
-      switch(e.key) {
-        case "ArrowDown":
-          panel.scrollTop += scrollAmount;
-          e.preventDefault();
-          break;
-        case "ArrowUp":
-          panel.scrollTop -= scrollAmount;
-          e.preventDefault();
-          break;
-        case "PageDown":
-          panel.scrollTop += scrollAmount;
-          e.preventDefault();
-          break;
-        case "PageUp":
-          panel.scrollTop -= scrollAmount;
-          e.preventDefault();
-          break;
-      }
-    });
-  }
-
-  enablePanelScroll();
   </script>
 </body>
 </html>
