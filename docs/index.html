@@ -82,12 +82,22 @@ function render() {
           ${isOpen ? "Close Challenge" : "Start Challenge"}
         </button>
 
-        <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
-          ${isOpen ? briefingHtml(x) : ""}
-        </div>
+        <div class="briefing-panel" id="panel-${escapeHtml(x.id)}"></div>
       </article>
     `;
   }).join("");
+  
+  filtered.forEach(x => {
+  const panel = document.getElementById(`panel-${x.id}`);
+  if (!panel) return;
+  if (openId === x.id) {
+    panel.classList.add("open");
+    panel.innerHTML = briefingHtml(x);
+  } else {
+    panel.classList.remove("open");
+    panel.innerHTML = "";
+  }
+});
 
   // Wire up Start/Close buttons
   document.querySelectorAll(".start-btn").forEach(btn => {
