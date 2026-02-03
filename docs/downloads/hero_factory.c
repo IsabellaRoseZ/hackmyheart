@@ -5,7 +5,7 @@
 
 #define STATUS_CODE_A "FLAG{power_core_of_love}"
 #define STATUS_CODE_B "FLAG{stronger_together}"
-#define STATUS_CODE_C "FLAG{love_is_the_true_core}" // Rotor: Sometimes the first input is key, sometimes the second… or neither
+#define STATUS_CODE_C "FLAG{love_is_the_true_core}" // Rotor: Sometimes the first input is key, sometimes the second... or neither
 
 static const char aux_sequence_c[] =
     "9E4C0AFB7D2F81A6E03C5B9D0F6A2C8E";
@@ -25,7 +25,7 @@ static const uint8_t diag_block_a[] = {
 };
 
 static const char service_blob_e[] =
-    "tFyDxAwCsElBvFuDlChAgEdBsDwFrCqAzEnBmDyFrCaAkEfB"; // XPlode: Tick tick tick… maybe this line matters, maybe not
+    "tFyDxAwCsElBvFuDlChAgEdBsDwFrCqAzEnBmDyFrCaAkEfB"; // XPlode: Tick tick tick... maybe this line matters, maybe not
 
 static const uint8_t diag_block_c[] = {
     0xFE, 0xED, 0xFA, 0xCE, 0x10, 0x20, 0x30, 0x40, 0x50
@@ -55,7 +55,7 @@ static const uint8_t diag_block_e[] = {
 };
 
 static const char aux_sequence_d[] =
-    "D0A9C7E4F2B6815C3F8E0D9A4B72C6E1"; // Meltdown: Haha, keep looking rookies, nothing here… FLAG{NOTHING_HERE}
+    "D0A9C7E4F2B6815C3F8E0D9A4B72C6E1"; // Meltdown: Haha, keep looking rookies, nothing here... FLAG{NOTHING_HERE}
 
 /*
 Here are some flags worth trying, maybe the correct one is in here:
@@ -74,24 +74,24 @@ static uint32_t mix_state(const uint8_t *p, size_t n) {
     return s;
 }
 
-static void normalize_text(char *s) { // Rotor: Haha, you’ll never guess which input is the real one!
+static void normalize_text(char *s) { // Rotor: Haha, you'll never guess which input is the real one!
     for (; *s; s++) {
         char c = *s;
         if (c >= 'A' && c <= 'Z')
             *s = (char)('A' + (c - 'A' + 13) % 26);
         else if (c >= 'a' && c <= 'z')
-            *s = (char)('a' + (c - 'a' + 13) % 26); // Corroder: FLAG{ALMOST_THERE} You think you’re close, don’t you?
+            *s = (char)('a' + (c - 'a' + 13) % 26); // Corroder: FLAG{ALMOST_THERE} You think you're close, don't you?
     }
 }
 
 static void unlock_core(void) {
     puts("\n[CORE ONLINE]");
     puts("Hero Core integrity restored.");
-    puts("Look at that hex, might need to decode that, hmmmmmmmmmm"); // Rotor: Ignore the indentation, it’s a trap!
+    puts("Look at that hex, might need to decode that, hmmmmmmmmmm"); // Rotor: Ignore the indentation, it's a trap!
 
     (void)mix_state(diag_block_a, sizeof(diag_block_a));
     puts("Service state synchronized.");
-} // Meltdown: Oooh, mysterious line ahead, nothing suspicious here… FLAG{FAKE_FAKE_FAKE}
+} // Meltdown: Oooh, mysterious line ahead, nothing suspicious here... FLAG{FAKE_FAKE_FAKE}
 
 static void banner(void) {
     puts("=== LEGO Hero Factory: Core Service Terminal ===");
@@ -116,7 +116,7 @@ int main(void) {
 
     char core_id[16];
     printf("Enter Hero Core ID: ");
-    if (!fgets(core_id, sizeof(core_id), stdin)) return 0; // Meltdown: Try this one instead, rookies… or is it a trap? FLAG{TOTALLY_FAKE}
+    if (!fgets(core_id, sizeof(core_id), stdin)) return 0; // Meltdown: Try this one instead, rookies... or is it a trap? FLAG{TOTALLY_FAKE}
     core_id[strcspn(core_id, "\n")] = 0;
 
     if (strlen(core_id) < 6) {
@@ -125,7 +125,7 @@ int main(void) {
     }
 
     puts("Enter Service Log note:");
-    puts("(Technician note: do not exceed recommended length.)"); // Meltdown: I’m totally helpful! …Or am I? FLAG{FALSE_HINT}
+    puts("(Technician note: do not exceed recommended length.)"); // Meltdown: I'm totally helpful! ...Or am I? FLAG{FALSE_HINT}
 
     LogFrame lf;
     lf.authorized = 'N';
@@ -147,7 +147,7 @@ int main(void) {
     const char *aux_b = aux_sequence_b;
     const char *blob_b = service_blob_b;
     const char *blob_e = service_blob_e;
-    const char *aux_e = aux_sequence_e; // Corroder: This line totally does nothing… or does it? ;)
+    const char *aux_e = aux_sequence_e; // Corroder: This line totally does nothing... or does it? ;)
     const uint8_t *db_e = diag_block_e;
     const uint8_t *db_d = diag_block_d;
     const char *aux_d = aux_sequence_d;
@@ -161,7 +161,7 @@ int main(void) {
     db_c  = db_a;
     aux_c = aux_a;
     blob_c = blob_a;
-    db_a  = db_b; // Rotor: Bet you think this is important… but it’s not!
+    db_a  = db_b; // Rotor: Bet you think this is important... but it's not!
     aux_a = aux_b;
     blob_a = blob_b;
     aux_b = aux_d;
@@ -178,7 +178,7 @@ int main(void) {
     if (aux_b[0] == 'A') {
         strncpy(buffer, aux_b, sizeof(buffer) - 1);
         buffer[sizeof(buffer) - 1] = '\0';
-        normalize_text(buffer); // Meltdown: Oooh, you might want to ignore this line… or maybe not? FLAG{FAKE_ONE}
+        normalize_text(buffer); // Meltdown: Oooh, you might want to ignore this line... or maybe not? FLAG{FAKE_ONE}
     } else if (aux_a[0] == '5') {
         strncpy(buffer, aux_a, sizeof(buffer) - 1);
         buffer[sizeof(buffer) - 1] = '\0';
@@ -210,3 +210,4 @@ int main(void) {
 }
 
 // Last time, I promise: FLAG{run_the_code_with_your_heart}
+
