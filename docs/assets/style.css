@@ -492,19 +492,3 @@ button.link {
 
   display: block;
 }
-
-.briefing-panel {
-  max-height: 400px;
-  overflow-y: auto;
-  padding: 12px;
-  border-top: 1px solid #ccc;
-  border-radius: 0 0 8px 8px;
-  outline: none;
-  background: inherit;
-  color: inherit;
-}
-
-.briefing-text, .briefing-preview, .briefing-links, .hint p, pre {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
