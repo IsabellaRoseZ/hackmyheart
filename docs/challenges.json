@@ -32,7 +32,7 @@
   {
     "id": "OSINT-02",
     "title": "Too Much Love Potion",
-    "category": "Open Source",
+    "category": "Rev Eng",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Download the image and open it in a hex editor. Have fun on your journey Portal Master. Also, you’ll need CyberChef later. If you’re using https://hexed.it/, copying and pasting the message into CyberChef might be tricky, so below are some steps to follow.\n- Highlight the message in the plaintext area.\n- Press keys ctrl and c.\n- Change the style to CSV.\n- Click Copy & Close.\n- Paste the message in CyberChef.\n- Use the From Hex decoder with the Delimiter set to 0x with comma to turn the hex into the plaintext you saw in the image.",
