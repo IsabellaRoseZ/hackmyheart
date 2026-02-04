@@ -1,18 +1,8 @@
 [
   {
-    "id": "CRY-01",
-    "title": "Hearts on the Wire",
-    "category": "Crypto",
-    "points": 100,
-    "difficulty": "Easy",
-    "prompt": "Decrypt the message.",
-    "briefing": "This base64 string hides the flag:\n\nU0dWc2JHOGdWMjl5YkdRPQ==\n\nDecode layers until you find FLAG{...}.",
-    "hint": "Try Base64 → maybe another encoding after that."
-  },
-  {
     "id": "STEG-01",
     "title": "X-tra Special",
-    "category": "Steganography",
+    "category": "Steg",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Wolverine has secretly sent you a Valentine note. Can you find the secret message in his note?",
@@ -23,7 +13,7 @@
   {
     "id": "BIN-03",
     "title": "Heart Over Hardware",
-    "category": "Binary Exploitation",
+    "category": "Binary Exp",
     "difficulty": "Hard",
     "points": 300,
     "prompt": "Dear rookies,\nI’ve intercepted a C code from Von Nebula, and it’s up to you to analyze it.\n\nTake the code and paste it into an online C editor, like OnlineGDB.\nIf you’re using OnlineGDB, make sure you have two inputs, with the second one on the line below the first.\nStudy the code carefully as it contains information you will need later in CyberChef and stay alert because Corroder, Meltdown, Rotor, and XPlode are likely to try and distract you.\n\nI won’t be on this mission with you this time; I’m on the front line trying to stop Von Nebula from opening a blackhole vortex.\nI can’t leave the battle, and I don’t know the exact location of the vortex controls.\n\nThe flag you recover from this code is the key to shutting down the vortex.\nIf you don’t get it in time, Von Nebula could succeed, the vortex will form, and we won’t be able to celebrate Valentine’s Day.\n\nMove fast, stay sharp, and complete the mission rookies.\nThe fate of the galaxy depends on you.\n\n- Stormer",
@@ -33,7 +23,7 @@
     {
     "id": "CRY-12",
     "title": "Hunny, I Encrypted the Flag",
-    "category": "Cryptography",
+    "category": "Crypto",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Pooh Bear has been sent a message from a mysterious wizard. The wizard covered the message in magical HUNNY. Here is the message:\n4i 5u 4o 54 53 59 4o 57 4y 42 32 47 53 59 53 48 4j 4u 59 47 49 33 42 5n 4r 35 4c 45 51 57 52 53 4j 49 5u 56 55 34 43 59 47 4n 53 48 55 5n 4a 4l 47 46 54 47 47 4x 53 32 4s 52 52 46 4s 53 52 5y.\n\nThe wizard has provided this message for Pooh:\nOh d dear… the message was first t turned on its head at bash, where each little letter scurried off to meet its distant twin.\nTh then, with a puff of magic, it was lifted into a broader shape, padded ever so carefully until it fit a familiar sixty-four symbol mold.\nN next, the symbols were gently squeezed together, becoming a simpler pattern of thirty-two marks, before being hardened into raw hex, if you please.\nA and finally, an old Vigenere charm was wrapped around the whole thing, with a quiet key guiding the very last layer of disguise.\n\nHelp Pooh decode the message so he can know what it says. Maybe use CyberChef.",
