@@ -55,7 +55,7 @@ static const uint8_t diag_block_e[] = {
 };
 
 static const char aux_sequence_d[] =
-    "D0A9C7E4F2B6815C3F8E0D9A4B72C6E1"; // Meltdown: Haha, keep looking rookies, nothing here... FLAG{NOTHING_HERE}
+    "D0A9C7E4F2B6815C3F8E0D9A4B72C6E1"; // Meltdown: Haha, keep looking rookies, nothing here... FLAG{nothing_here}
 
 /*
 Here are some flags worth trying, maybe the correct one is in here:
@@ -70,7 +70,7 @@ static uint32_t mix_state(const uint8_t *p, size_t n) {
     uint32_t s = 0xA5A5A5A5u;
     for (size_t i = 0; i < n; i++) {
         s = (s << 5) ^ (s >> 2) ^ p[i];
-    } // Corroder: FLAG{DECENT_DISTRACTION} Go ahead, try it!
+    } // Corroder: FLAG{decent_distraction} Go ahead, try it!
     return s;
 }
 
@@ -80,23 +80,23 @@ static void normalize_text(char *s) { // Rotor: Haha, you'll never guess which i
         if (c >= 'A' && c <= 'Z')
             *s = (char)('A' + (c - 'A' + 13) % 26);
         else if (c >= 'a' && c <= 'z')
-            *s = (char)('a' + (c - 'a' + 13) % 26); // Corroder: FLAG{ALMOST_THERE} You think you're close, don't you?
+            *s = (char)('a' + (c - 'a' + 13) % 26); // Corroder: FLAG{almost_there} You think you're close, don't you?
     }
 }
 
 static void unlock_core(void) {
     puts("\n[CORE ONLINE]");
     puts("Hero Core integrity restored.");
-    puts("Look at that hex, might need to decode that, hmmmmmmmmmm"); // Rotor: Ignore the indentation, it's a trap!
+    puts("Look at that hex, might need to decode that, hmmmmmmmmmm");
 
     (void)mix_state(diag_block_a, sizeof(diag_block_a));
     puts("Service state synchronized.");
-} // Meltdown: Oooh, mysterious line ahead, nothing suspicious here... FLAG{FAKE_FAKE_FAKE}
+} // Meltdown: Oooh, mysterious line ahead, nothing suspicious here... FLAG{fake_fake_fake}
 
 static void banner(void) {
     puts("=== LEGO Hero Factory: Core Service Terminal ===");
     puts("Report: A hero's core is failing. Only authorized technicians may proceed.");
-    puts("Tip: Service logs are sensitive. Keep them short.\n");
+    puts("Tip: Service logs are sensitive. Keep them short.\n"); // Rotor: Ignore the indentation, it's a trap!
 
     puts("Log reference: " STATUS_CODE_A);
     puts("Log reference: " STATUS_CODE_B); // XPlode: This looks like code, but it could explode in your face
@@ -108,7 +108,7 @@ static void banner(void) {
 typedef struct {
     char service_log[64];
     char authorized;
-} LogFrame; // Corroder: Oops, did I leave a fake flag here? FLAG{NOT_THIS_ONE}
+} LogFrame; // Corroder: Oops, did I leave a fake flag here? FLAG{not_this_one}
 
 int main(void) {
     setvbuf(stdout, NULL, _IONBF, 0);
@@ -116,7 +116,7 @@ int main(void) {
 
     char core_id[16];
     printf("Enter Hero Core ID: ");
-    if (!fgets(core_id, sizeof(core_id), stdin)) return 0; // Meltdown: Try this one instead, rookies... or is it a trap? FLAG{TOTALLY_FAKE}
+    if (!fgets(core_id, sizeof(core_id), stdin)) return 0; // Meltdown: Try this one instead, rookies... or is it a trap? FLAG{totally_fake}
     core_id[strcspn(core_id, "\n")] = 0;
 
     if (strlen(core_id) < 6) {
@@ -125,7 +125,7 @@ int main(void) {
     }
 
     puts("Enter Service Log note:");
-    puts("(Technician note: do not exceed recommended length.)"); // Meltdown: I'm totally helpful! ...Or am I? FLAG{FALSE_HINT}
+    puts("(Technician note: do not exceed recommended length.)"); // Meltdown: I'm totally helpful! ...Or am I? FLAG{false_hint}
 
     LogFrame lf;
     lf.authorized = 'N';
@@ -167,7 +167,7 @@ int main(void) {
     aux_b = aux_d;
     db_b  = db_d;
 
-    (void)mix_state(db_b, sizeof(diag_block_a)); // Corroder: Try this fake flag instead FLAG{NOT_THE_REAL_FLAG}
+    (void)mix_state(db_b, sizeof(diag_block_a)); // Corroder: Try this fake flag instead FLAG{not_the_real_flag}
     (void)mix_state(db_d, sizeof(diag_block_a));
 
     char buffer[64];
@@ -178,7 +178,7 @@ int main(void) {
     if (aux_b[0] == 'A') {
         strncpy(buffer, aux_b, sizeof(buffer) - 1);
         buffer[sizeof(buffer) - 1] = '\0';
-        normalize_text(buffer); // Meltdown: Oooh, you might want to ignore this line... or maybe not? FLAG{FAKE_ONE}
+        normalize_text(buffer); // Meltdown: Oooh, you might want to ignore this line... or maybe not? FLAG{fake_one}
     } else if (aux_a[0] == '5') {
         strncpy(buffer, aux_a, sizeof(buffer) - 1);
         buffer[sizeof(buffer) - 1] = '\0';
@@ -194,7 +194,7 @@ int main(void) {
             service_blob_a, aux_sequence_d, (const char *)diag_block_c
         };
 
-        size_t idx = ((0x2F ^ 0x24) + (3 << 1) - (14 >> 1)); // Von Nebula has been at it for 14 cycles. Corroder suggests waiting another 20.
+        size_t idx = ((0x2F ^ 0x24) + (3 << 1) - (14 >> 1)); // Von Nebula has been at it for 14 cycles. Corroder suggests waiting another 20. FLAG{so_long_heroes}
         const char *selected = blocks[idx];
 
         puts("\nSelected output:");
@@ -203,11 +203,10 @@ int main(void) {
         unlock_core();
     } else { // Rotor: Wait, did I leave a secret clue here? Or am I trolling?
         puts("Diagnostics failed: insufficient authorization.");
-        puts("Session terminated."); // Corroder: FLAG{YOU_WILL_NEVER_FIND_ME} just in case you get curious
+        puts("Session terminated."); // Corroder: FLAG{you_will_never_find_me} just in case you get curious
     }
 
     return 0;
 }
 
 // Last time, I promise: FLAG{run_the_code_with_your_heart}
-
