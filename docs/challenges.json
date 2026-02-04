@@ -20,7 +20,7 @@
     "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }],
     "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
   },
-    {
+  {
     "id": "CRY-12",
     "title": "Hunny, I Encrypted the Flag",
     "category": "Crypto",
@@ -28,5 +28,15 @@
     "points": 200,
     "prompt": "Pooh Bear has been sent a message from a mysterious wizard. The wizard covered the message in magical HUNNY. Here is the message:\n4i 5u 4o 54 53 59 4o 57 4y 42 32 47 53 59 53 48 4j 4u 59 47 49 33 42 5n 4r 35 4c 45 51 57 52 53 4j 49 5u 56 55 34 43 59 47 4n 53 48 55 5n 4a 4l 47 46 54 47 47 4x 53 32 4s 52 52 46 4s 53 52 5y\n\nThe wizard has provided this message for Pooh:\nOh d dear… the message was first t turned on its head at bash, where each little letter scurried off to meet its distant twin.\nTh then, with a puff of magic, it was lifted into a broader shape, padded ever so carefully until it fit a familiar sixty-four symbol mold.\nN next, the symbols were gently squeezed together, becoming a simpler pattern of thirty-two marks, before being hardened into raw hex, if you please.\nA and finally, an old Vigenere charm was wrapped around the whole thing, with a quiet key guiding the very last layer of disguise.\n\nHelp Pooh decode the message so he can know what it says. Maybe use CyberChef.",
     "hint": "Did you find the magical key for Vigenere?"
+  },
+  {
+    "id": "OSINT-02",
+    "title": "Too Much Love Potion",
+    "category": "Open Source Intel",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Download the image and open it in a hex editor. Have fun on your journey Portal Master. Also, you’ll need CyberChef later. If you’re using https://hexed.it/, copying and pasting the message into CyberChef might be tricky, so below are some steps to follow.\nHighlight the message in the plaintext area.\nPress keys ctrl and c.\nChange the style to CSV.\nClick Copy & Close.\nPaste the message in CyberChef.\nUse the From Hex decoder with the Delimiter set to 0x with comma to turn the hex into the plaintext you saw in the image.",
+    "downloads": [{ "label": "pop_fizz_love_potion_situation_is_crazy.jpg", "url": "downloads/pop_fizz_love_potion_situation_is_crazy.jpg" }],
+    "hint": "I hope you found the cipher you needed earlier, Portal Master. Now consider this: Pop Fizz lost track of his counting, but he figured out that the message was encoded in something called scytale. Perhaps the ingredients set the length of letters per turn. Also, keep punctuation and spaces, that may come in handy."
   }
 ]
