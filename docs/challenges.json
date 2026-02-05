@@ -58,9 +58,18 @@
     "hint": "Consider some of these Linux commands:\n- cd f*\n- cat README.txt\n- ls\n- ls -l\n- ls -al\n- grep -R Frodo .\n\nConsider this too from the home directory:\n- ls -l f*\n- chmod 644 frodo_sam_valentine_linux/README.txt\n- ls -l f*\n- chmod 664 frodo_sam_valentine_linux/README.txt"
   },
   {
+    "id": "OSINT-01",
+    "title": "Just Another Valentine’s Day Episode",
+    "category": "OSI",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "An early SpongeBob SquarePants episode revolves around Valentine’s Day and is paired with another short segment. Using open-source information, determine the code associated with this Valentine’s Day episode.",
+    "hint": "SpongeBob episodes are often listed by segments, but the production code applies to the full episode."
+  },
+  {
     "id": "OSINT-02",
     "title": "Too Much Love Potion",
-    "category": "Rev Eng",
+    "category": "OSI",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Download the image and open it in a hex editor. Have fun on your journey Portal Master. Also, you’ll need CyberChef later. If you’re using https://hexed.it/, copying and pasting the message into CyberChef might be tricky, so below are some steps to follow.\n- Highlight the message in the plaintext area.\n- Press keys ctrl and c.\n- Change the style to CSV.\n- Click Copy & Close.\n- Paste the message in CyberChef.\n- Use the From Hex decoder with the Delimiter set to 0x with comma to turn the hex into the plaintext you saw in the image.",
