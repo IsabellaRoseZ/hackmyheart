@@ -69,7 +69,7 @@
   },
   {
     "id": "PAC-02",
-    "title": "The Boss’s Broken Valentine",
+    "title": "The Boss’s Valentine",
     "category": "PW Crack",
     "difficulty": "Medium",
     "points": 200,
@@ -82,7 +82,7 @@
     "category": "Steg",
     "difficulty": "Easy",
     "points": 100,
-    "prompt": "Love is in the air… and so are the birds. A special Valentine’s transmission has been intercepted from the Pork Side, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n -2 lovers, even if they’re birds and pigs, still find a way to share a message.\n -- Some things aren’t meant to be read straight across.\n -Even when the text looks broken, it usually isn’t.\n -Give rearranging a try if it feels scrambled.\n -Good tools exist online for exactly this kind of puzzle.\n -2nd thoughts? Don’t overthink it.",
+    "prompt": "Love is in the air… and so are the birds. A special Valentine’s transmission has been intercepted from the Pork Side, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n - 2 lovers, even if they’re birds and pigs, still find a way to share a message.\n - -Some things aren’t meant to be read straight across.\n - Even when the text looks broken, it usually isn’t.\n - Give rearranging a try if it feels scrambled.\n - Good tools exist online for exactly this kind of puzzle.\n - 2nd thoughts? Don’t overthink it.",
     "downloads": [{ "label": "angry_birds_star_wars_valentine.jpg", "url": "downloads/angry_birds_star_wars_valentine.jpg" }],
     "hint": "I think FutureBoy goes by the name of Alan Eliasen."
   },
