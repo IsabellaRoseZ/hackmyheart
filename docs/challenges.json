@@ -68,7 +68,26 @@
     "hint": "I hope you found the cipher you needed earlier, Portal Master. Now consider this: Pop Fizz lost track of his counting, but he figured out that the message was encoded in something called scytale. Perhaps the ingredients set the length of letters per turn. Also, keep punctuation and spaces, that may come in handy."
   },
   {
-    "id": "STEG-01",
+    "id": "PAC-02",
+    "title": "The Boss’s Broken Valentine",
+    "category": "PW Crack",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "The Boss left a heartfelt message for Pim, Charlie, Allan, and Glep, but, as usual, he didn’t deliver it in a normal way. Instead, the message was shattered into a series of MD5 hashes, each hiding a small piece of what he meant to say. It’s up to the Smiling Friends to recover each fragment, piece the message back together, and make sense of it as a whole. Once you’ve found all the parts, you’ll need to assemble them in order, add the underscores yourself, and put the final message in the proper FLAG{} format. You can find the hashes and the code you’ll need here: https://colab.research.google.com/drive/1TSuYwxYJhljou3BVkYkjB5frNYjdbpQr?usp=sharing.",
+    "hint": "You only need the hashes where the output is letters to build your flag, don’t worry about any number outputs."
+  },
+  {
+    "id": "STEG-03",
+    "title": "The Empire Loves Back",
+    "category": "Steg",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love is in the air… and so are the birds. A special Valentine’s transmission has been intercepted from the Pork Side, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n -2 lovers, even if they’re birds and pigs, still find a way to share a message.\n -- Some things aren’t meant to be read straight across.\n -Even when the text looks broken, it usually isn’t.\n -Give rearranging a try if it feels scrambled.\n -Good tools exist online for exactly this kind of puzzle.\n -2nd thoughts? Don’t overthink it.",
+    "downloads": [{ "label": "angry_birds_star_wars_valentine.jpg", "url": "downloads/angry_birds_star_wars_valentine.jpg" }],
+    "hint": "I think FutureBoy goes by the name of Alan Eliasen."
+  },
+  {
+    "id": "STEG-06",
     "title": "X-tra Special",
     "category": "Steg",
     "difficulty": "Medium",
