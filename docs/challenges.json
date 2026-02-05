@@ -21,7 +21,7 @@
   {
     "id": "CRY-14",
     "title": "Nya's Secret Message",
-    "catrgory": "Crypto",
+    "category": "Crypto",
     "difficulty": "Hard",
     "points": 300,
     "prompt": "Jay found a small envelope tucked inside his toolbox. Inside is a note from Nya, or at least, he thinks it’s from Nya. The message looks nothing like her handwriting. Instead, it’s a strange block of symbols and letters. If Jay wants to know what Nya wrote, he’ll have to decode the note. Help Jay decode Nya’s encrypted Valentine and recover the flag.",
