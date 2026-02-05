@@ -55,7 +55,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Frodo left Sam a Valentine, but even in the Shire, secrets are rarely left in plain sight. Explore the filesystem, uncover what\u2019s hidden, and use basic Linux commands to reveal the message meant only for a true companion. Download ctf.ova from https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing and import it into Oracle VirtualBox by clicking \"File\", then \"Import Appliance\u2026\". The login credential for both username and password is \"ctf\". Start your journey in Middle Earth by reading README.txt.",
-    "hint": [ { "text": "Consider some of these Linux commands:", "commands": [ "cd f*", "cat README.txt", "ls", "ls -l", "ls -al", "grep -R Frodo ." ] }, { "text": "Consider this too from the home directory:", "commands": [ "ls -l f*", "chmod 644 frodo_sam_valentine_linux/README.txt", "ls -l f*", "chmod 664 frodo_sam_valentine_linux/README.txt" ] } ]
+    "hint": "Consider some of these Linux commands:\ncd f*\ncat README.txt\nls\nls -l\nls -al\ngrep -R Frodo .\n\nConsider this too from the home directory:\nls -l f*\nchmod 644 frodo_sam_valentine_linux/README.txt\nls -l f*\nchmod 664 frodo_sam_valentine_linux/README.txt"
   }
   {
     "id": "OSINT-02",
