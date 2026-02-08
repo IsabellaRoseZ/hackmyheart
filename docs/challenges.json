@@ -20,6 +20,26 @@
     "hint": "Rotate the characters by a specific number."
   },
   {
+    "id": "CRY-03",
+    "title": "Decode Love",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love isn’t always obvious. Try decoding it.",
+    "downloads":  [{ "label": "decode_love.txt", "url": "downloads/decode_love.txt" }],
+    "hint": "The answer is hidden in sixty four characters worth of encoding."
+  },
+  {
+    "id": "CRY-04",
+    "title": "A Shared Secret",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Some secrets are meant to be shared. This one is encrypted. Decrypt it to reveal the flag.",
+    "downloads":  [{ "label": "a_shared_secret.txt", "url": "downloads/a_shared_secret.txt" }],
+    "hint": "Try reading the alphabet from the opposite end and see what the message becomes."
+  },
+  {
     "id": "CRY-12",
     "title": "Hunny, I Encrypted the Flag",
     "category": "Crypto",
