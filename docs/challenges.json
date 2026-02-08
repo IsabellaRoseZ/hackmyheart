@@ -16,7 +16,7 @@
     "points": 300,
     "prompt": "Jay found a small envelope tucked inside his toolbox. Inside is a note from Nya, or at least, he thinks it’s from Nya. The message looks nothing like her handwriting. Instead, it’s a strange block of symbols and letters. If Jay wants to know what Nya wrote, he’ll have to decode the note. Help Jay decode Nya’s encrypted Valentine and recover the flag.",
     "downloads":  [{ "label": "scroll.txt", "url": "downloads/scroll.txt" }],
-    "hint": "Do you know the ciphers you used for BIN-03, CRY-12, and FOR-01?"
+    "hint": "Do you know the ciphers you used for BIN-02, CRY-12, and FOR-01?"
   },
   {
     "id": "FOR-01",
