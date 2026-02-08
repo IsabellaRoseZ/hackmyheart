@@ -40,6 +40,76 @@
     "hint": "Try reading the alphabet from the opposite end and see what the message becomes."
   },
   {
+    "id": "CRY-05",
+    "title": "A Message Meant For You",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Some messages aren’t meant for everyone. This one was encrypted so only the right person could read it.",
+    "downloads":  [{ "label": "a_message_meant_for_you.txt", "url": "downloads/a_message_meant_for_you.txt" }],
+    "hint": "Rotate the characters by a specific number."
+  },
+  {
+    "id": "CRY-06",
+    "title": "Backwards Love",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Not every secret wants to stay hidden. This one’s waiting for you to decrypt it.",
+    "downloads":  [{ "label": "backwards_love.txt", "url": "downloads/backwards_love.txt" }],
+    "hint": "The answer is hidden in sixty four characters worth of encoding."
+  },
+  {
+    "id": "CRY-07",
+    "title": "Keys to My Heart",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love is complicated. So is this cipher. Break it.",
+    "downloads":  [{ "label": "keys_to_my_heart.txt", "url": "downloads/keys_to_my_heart.txt" }],
+    "hint": "The answer is hidden in sixty four characters worth of encoding."
+  },
+  {
+    "id": "CRY-08",
+    "title": "Rose Color Morse Code",
+    "category": "Crypto",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Roses can say more than words ever could.",
+    "downloads":  [{ "label": "rose_color_morse_code.txt", "url": "downloads/rose_color_morse_code.txt" }],
+    "hint": "Think of a classic signal made of dots and dashes."
+  },
+  {
+    "id": "CRY-09",
+    "title": "Secret Admirer",
+    "category": "Crypto",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "You weren’t supposed to see this, unless you can decrypt it.",
+    "downloads":  [{ "label": "secret_admirer.txt", "url": "downloads/secret_admirer.txt" }],
+    "hint": "Rotate the characters by a specific number."
+  },
+  {
+    "id": "CRY-10",
+    "title": "Encrypted With Love",
+    "category": "Crypto",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Some messages are too special to leave in plaintext. You will need to add the brackets and lowercase the message in the flag on your own.",
+    "downloads":  [{ "label": "encrypted_with_love.txt", "url": "downloads/encrypted_with_love.txt" }],
+    "hint": "Think of a classic signal made of dots and dashes."
+  },
+  {
+    "id": "CRY-11",
+    "title": "Love at First Byte",
+    "category": "Crypto",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Some messages are too special to leave in plaintext. You will need to add the brackets and lowercase the message in the flag on your own.",
+    "downloads":  [{ "label": "love_at_first_byte.txt", "url": "downloads/love_at_first_byte.txt" }],
+    "hint": "Think of a classic signal made of dots and dashes."
+  },
+  {
     "id": "CRY-12",
     "title": "Hunny, I Encrypted the Flag",
     "category": "Crypto",
