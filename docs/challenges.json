@@ -1,5 +1,25 @@
 [
   {
+    "id": "CRY-01",
+    "title": "Love, Locked",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "A message was locked away with intention. Decrypt it to reveal what’s hidden inside.",
+    "downloads":  [{ "label": "love_locked.txt", "url": "downloads/love_locked.txt" }],
+    "hint": "The answer is hidden in sixty four characters worth of encoding."
+  },
+  {
+    "id": "CRY-02",
+    "title": "Love the ROT",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love a good twist? Try rotating things a little.",
+    "downloads":  [{ "label": "love_the_rot.txt", "url": "downloads/love_the_rot.txt" }],
+    "hint": "Rotate the characters by a specific number."
+  },
+  {
     "id": "CRY-12",
     "title": "Hunny, I Encrypted the Flag",
     "category": "Crypto",
