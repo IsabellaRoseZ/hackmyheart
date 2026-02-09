@@ -6,7 +6,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "A message was locked away with intention. Decrypt it to reveal what’s hidden inside.",
-    "downloads":  [{ "label": "love_locked.txt", "url": "downloads/love_locked.txt" }],
+    "downloads": [{ "label": "love_locked.txt", "url": "downloads/love_locked.txt" }],
     "hint": "The answer is hidden in sixty four characters worth of encoding."
   },
   {
@@ -16,7 +16,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Love a good twist? Try rotating things a little.",
-    "downloads":  [{ "label": "love_the_rot.txt", "url": "downloads/love_the_rot.txt" }],
+    "downloads": [{ "label": "love_the_rot.txt", "url": "downloads/love_the_rot.txt" }],
     "hint": "Rotate the characters by a specific number."
   },
   {
@@ -26,7 +26,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Love isn’t always obvious. Try decoding it.",
-    "downloads":  [{ "label": "decode_love.txt", "url": "downloads/decode_love.txt" }],
+    "downloads": [{ "label": "decode_love.txt", "url": "downloads/decode_love.txt" }],
     "hint": "The answer is hidden in sixty four characters worth of encoding."
   },
   {
@@ -36,7 +36,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Some secrets are meant to be shared. This one is encrypted. Decrypt it to reveal the flag.",
-    "downloads":  [{ "label": "a_shared_secret.txt", "url": "downloads/a_shared_secret.txt" }],
+    "downloads": [{ "label": "a_shared_secret.txt", "url": "downloads/a_shared_secret.txt" }],
     "hint": "Try reading the alphabet from the opposite end and see what the message becomes."
   },
   {
@@ -46,7 +46,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Some messages aren’t meant for everyone. This one was encrypted so only the right person could read it.",
-    "downloads":  [{ "label": "a_message_meant_for_you.txt", "url": "downloads/a_message_meant_for_you.txt" }],
+    "downloads": [{ "label": "a_message_meant_for_you.txt", "url": "downloads/a_message_meant_for_you.txt" }],
     "hint": "Rotate the characters by a specific number."
   },
   {
@@ -56,7 +56,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Not every secret wants to stay hidden. This one’s waiting for you to decrypt it.",
-    "downloads":  [{ "label": "backwards_love.txt", "url": "downloads/backwards_love.txt" }],
+    "downloads": [{ "label": "backwards_love.txt", "url": "downloads/backwards_love.txt" }],
     "hint": "The answer is hidden in sixty four characters worth of encoding."
   },
   {
@@ -66,7 +66,7 @@
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Love is complicated. So is this cipher. Break it.",
-    "downloads":  [{ "label": "keys_to_my_heart.txt", "url": "downloads/keys_to_my_heart.txt" }],
+    "downloads": [{ "label": "keys_to_my_heart.txt", "url": "downloads/keys_to_my_heart.txt" }],
     "hint": "The answer is hidden in sixty four characters worth of encoding."
   },
   {
@@ -76,7 +76,7 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Roses can say more than words ever could.",
-    "downloads":  [{ "label": "rose_color_morse_code.txt", "url": "downloads/rose_color_morse_code.txt" }],
+    "downloads": [{ "label": "rose_color_morse_code.txt", "url": "downloads/rose_color_morse_code.txt" }],
     "hint": "Think of a classic signal made of dots and dashes."
   },
   {
@@ -86,7 +86,7 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "You weren’t supposed to see this, unless you can decrypt it.",
-    "downloads":  [{ "label": "secret_admirer.txt", "url": "downloads/secret_admirer.txt" }],
+    "downloads": [{ "label": "secret_admirer.txt", "url": "downloads/secret_admirer.txt" }],
     "hint": "Rotate the characters by a specific number."
   },
   {
@@ -96,7 +96,7 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Some messages are too special to leave in plaintext. You will need to add the brackets and lowercase the message in the flag on your own.",
-    "downloads":  [{ "label": "encrypted_with_love.txt", "url": "downloads/encrypted_with_love.txt" }],
+    "downloads": [{ "label": "encrypted_with_love.txt", "url": "downloads/encrypted_with_love.txt" }],
     "hint": "Think of a classic signal made of dots and dashes."
   },
   {
@@ -106,7 +106,7 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Some messages are too special to leave in plaintext. You will need to add the brackets and lowercase the message in the flag on your own.",
-    "downloads":  [{ "label": "love_at_first_byte.txt", "url": "downloads/love_at_first_byte.txt" }],
+    "downloads": [{ "label": "love_at_first_byte.txt", "url": "downloads/love_at_first_byte.txt" }],
     "hint": "Think of a classic signal made of dots and dashes."
   },
   {
@@ -125,28 +125,68 @@
     "difficulty": "Hard",
     "points": 300,
     "prompt": "Jay found a small envelope tucked inside his toolbox. Inside is a note from Nya, or at least, he thinks it’s from Nya. The message looks nothing like her handwriting. Instead, it’s a strange block of symbols and letters. If Jay wants to know what Nya wrote, he’ll have to decode the note. Help Jay decode Nya’s encrypted Valentine and recover the flag.",
-    "downloads":  [{ "label": "scroll.txt", "url": "downloads/scroll.txt" }],
+    "downloads": [{ "label": "scroll.txt", "url": "downloads/scroll.txt" }],
     "hint": "Do you know the ciphers you used for BIN-02, CRY-12, and FOR-01?"
   },
   {
     "id": "FOR-01",
     "title": "HoloLovegram from Palpatine",
-    "category": "Foren",
+    "category": "Forensics",
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Download the image and analyze it with a metadata editor to find the flag. Also, you’ll need CyberChef later. Remember, I am the Senate. If not, it’s treason then. Side note: did you know that the letters used to spell senator also spell treason? That’s cool!",
-    "downloads":  [{ "label": "the_senate.jpg", "url": "downloads/the_senate.jpg" }],
+    "downloads": [{ "label": "the_senate.jpg", "url": "downloads/the_senate.jpg" }],
     "hint": "Are the ciphers you’re using in the correct order?"
   },
   {
     "id": "FOR-02",
     "title": "You Put a Smile on My Face",
-    "category": "Foren",
+    "category": "Forensics",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "The Joker has a special Valentine for Batman. He leaves it where only the observant will notice, wrapped in riddles and a playful smirk. Reading it straight won’t reveal the truth. You’ll need to see the letters from another angle, perhaps in the metadata.",
-    "downloads":  [{ "label": "why_so_serious_valentine.jpg", "url": "downloads/why_so_serious_valentine.jpg" }],
+    "downloads": [{ "label": "why_so_serious_valentine.jpg", "url": "downloads/why_so_serious_valentine.jpg" }],
     "hint": "Stay sharp and alert, the Joker can be shifty."
+  },
+  {
+    "id": "LOG-01",
+    "title": "Burn Book of Cell IDs",
+    "category": "LA",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Track the Plastics and their Valentine’s Day conversation. Count how many unique CELL_ID values appear in the log. Submit your answer as FLAG{<number>}.",
+    "downloads": [{ "label": "mean_girls.log", "url": "downloads/mean_girls.log" }],
+    "hint": "Deduplicate the CELL_ID= field."
+  },
+  {
+    "id": "LOG-02",
+    "title": "The Largest Love Note",
+    "category": "LA",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Someone sent an MMS. Classic. Find the largest attachment size in bytes (look for SIZE_BYTES=). Submit your answer as FLAG{<number>}.",
+    "downloads": [{ "label": "mean_girls.log", "url": "downloads/mean_girls.log" }],
+    "hint": "There may be only one MMS… or not…"
+  },
+  {
+    "id": "LOG-03",
+    "title": "Love Is Forbidden",
+    "category": "LA",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{DROID}.",
+    "downloads": [{ "label": "droids.log", "url": "downloads/droids.log" }],
+    "hint": "Only one request was explicitly denied."
+  },
+  {
+    "id": "LOG-04",
+    "title": "From Naboo With Love",
+    "category": "LA",
+    "difficulty": "Hard",
+    "points": 300,
+    "prompt": "How many seconds elapsed between Padmé sending a message and Anakin first checking his inbox? The flag should be written as FLAG{#}.",
+    "downloads": [{ "label": "droids.log", "url": "downloads/droids.log" }],
+    "hint": "You might have to do a little bit of math with the timestamps."
   },
   {
     "id": "LIN-01",
@@ -175,6 +215,15 @@
     "prompt": "Download the image and open it in a hex editor. Have fun on your journey Portal Master. Also, you’ll need CyberChef later. If you’re using https://hexed.it/, copying and pasting the message into CyberChef might be tricky, so below are some steps to follow.\n- Highlight the message in the plaintext area.\n- Press keys ctrl and c.\n- Change the style to CSV.\n- Click Copy & Close.\n- Paste the message in CyberChef.\n- Use the From Hex decoder with the Delimiter set to 0x with comma to turn the hex into the plaintext you saw in the image.",
     "downloads": [{ "label": "pop_fizz_love_potion_situation_is_crazy.jpg", "url": "downloads/pop_fizz_love_potion_situation_is_crazy.jpg" }],
     "hint": "I hope you found the cipher you needed earlier, Portal Master. Now consider this: Pop Fizz lost track of his counting, but he figured out that the message was encoded in something called scytale. Perhaps the ingredients set the length of letters per turn. Also, keep punctuation and spaces, that may come in handy."
+  },
+  {
+    "id": "PAC-01",
+    "title": "Conversation Heart Hashes",
+    "category": "PW Crack",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love is in the air… and so are weak passwords. You have discovered a small credential dump belonging to three users: Juliet, Cupid, and Valentine. Can you crack their password hashes? Take the password as it is and format it in the FLAG{} format. Each cracked password is worth 100 points.\n Juliet:3268b1758db6421541d5e2bcfac1503d\n Cupid:308c0fe941e5f493b5ebf087dda9992f\n Valentine:7d1b1718247e5e42e6534baca20e6864",
+    "hint": "Eg. A cracked password of “lover99” will be entered into the answer submission form as FLAG{lover99}. Please enter each user’s password in flag format one at a time."
   },
   {
     "id": "PAC-02",
@@ -207,6 +256,16 @@
     "hint": "Think PATH and environment assumptions."
   },
   {
+    "id": "STEG-08",
+    "title": "AllSpark Amour",
+    "category": "Steg",
+    "difficulty": "Hard",
+    "points": 300,
+    "prompt": "Optimus Prime has sent Bumblebee a Valentine’s Day card, but there’s a hidden message inside, and Bumblebee needs your help to uncover it. Your mission is to extract and decode the secret flag.",
+    "downloads": [{ "label": "autobotlove.png", "url": "downloads/autobotlove.png" }],
+    "hint": "The Vigenère cipher works much like an Autobot encryption grid: a keyword controls a series of shifting letter patterns. Just as Cybertronians once hid vital intel from Decepticon interception, this method scrambles each letter based on a repeating codeword, keeping the true message safely concealed."
+  },
+  {
     "id": "BIN-01",
     "title": "Overflowing Love",
     "category": "Binary Exp",
@@ -225,5 +284,32 @@
     "prompt": "Dear rookies,\nI’ve intercepted a C code from Von Nebula, and it’s up to you to analyze it.\n\nTake the code and paste it into an online C editor, like OnlineGDB.\nIf you’re using OnlineGDB, make sure you have two inputs, with the second one on the line below the first.\nStudy the code carefully as it contains information you will need later in CyberChef and stay alert because Corroder, Meltdown, Rotor, and XPlode are likely to try and distract you.\n\nI won’t be on this mission with you this time; I’m on the front line trying to stop Von Nebula from opening a blackhole vortex.\nI can’t leave the battle, and I don’t know the exact location of the vortex controls.\n\nThe flag you recover from this code is the key to shutting down the vortex.\nIf you don’t get it in time, Von Nebula could succeed, the vortex will form, and we won’t be able to celebrate Valentine’s Day.\n\nMove fast, stay sharp, and complete the mission rookies.\nThe fate of the galaxy depends on you.\n\n- Stormer",
     "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }],
     "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
-  } 
+  },
+  {
+    "id": "WEB-03",
+    "title": "Inception of the Heart",
+    "category": "Web Exp",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Cobb has been dreaming too long. Somewhere deep below the surface, Mal is calling to him leaving fragments, whispers, and memories scattered across the layers of the dream. Follow her messages downward in https://sites.google.com/view/inceptionoftheheart/inception. Question what feels real. Trust the totems. Only in the deepest layer will the truth reveal itself.",
+    "hint": "Cobb’s team is composed of him (the extractor), Ariadne (the architect), Arthur (the point man), Eames (the forger), and Yousif (the chemist). Maybe Cobb should consider recruiting an inspector. Perhaps you can be the inspector for Cobb’s team. Be careful of fake flags if you decide to take on this role."
+  },
+  {
+    "id": "WEB-04",
+    "title": "Muppet Lovegrams",
+    "category": "Web Exp",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "The Muppets are sending each other lovegrams to celebrate Valentine’s Day. You can find the lovegrams with this link: https://script.google.com/macros/s/AKfycbysIGa2S40UkGMrEo0EAsEc6z8kPaB5oUjHipuTQ0urP7YJg-hVdTzf3LIw6H9yw6uE/exec. Find the correct flag in one of the lovegrams.",
+    "hint": "Try inspecting the webpage by pressing the keys ctrl, shift, and i. You can also try viewing the source code by pressing the keys ctrl and u. If you’re still stuck, maybe change the parameter viewer to the id parameter."
+  },
+  {
+    "id": "WEB-05",
+    "title": "Sailor Moon",
+    "category": "Web Exp",
+    "difficulty": "Hard",
+    "points": 300,
+    "prompt": "In the name of the Moon, something seems off with this password reset page: https://script.google.com/macros/s/AKfycby1eCeQf5VpYz0cUKw94LY2bGz8wU0joR9GU9DMwLy8WqcpgXqomarBav-zhP4CMoRASg/exec. A familiar Sailor Guardian is trying to recover her account. Use the email usagi@moon.kingdom to investigate the reset process. Be quick when copying the flag once you reveal it.",
+    "hint": "Take a look at how password reset links are delivered. A service like webhook.site may help you see what is being sent."
+  }
 ]
