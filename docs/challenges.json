@@ -339,7 +339,8 @@
     "category": "Web Exp",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "The Muppets are sending each other lovegrams to celebrate Valentine’s Day. You can find the lovegrams with this link: https://script.google.com/macros/s/AKfycbysIGa2S40UkGMrEo0EAsEc6z8kPaB5oUjHipuTQ0urP7YJg-hVdTzf3LIw6H9yw6uE/exec. Find the correct flag in one of the lovegrams.",
+    "prompt": "The Muppets are sending each other lovegrams to celebrate Valentine’s Day. You can find the lovegrams by clicking Muppet Lovegrams below. Find the correct flag in one of the lovegrams.",
+    "downloads": [{ "label": "Muppet Lovegrams", "url": "https://script.google.com/macros/s/AKfycbysIGa2S40UkGMrEo0EAsEc6z8kPaB5oUjHipuTQ0urP7YJg-hVdTzf3LIw6H9yw6uE/exec" }],
     "hint": "Try inspecting the webpage by pressing the keys ctrl, shift, and i. You can also try viewing the source code by pressing the keys ctrl and u. If you’re still stuck, maybe change the parameter viewer to the id parameter."
   },
   {
