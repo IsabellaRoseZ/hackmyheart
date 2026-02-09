@@ -196,7 +196,8 @@
     "category": "Linux",
     "difficulty": "Easy",
     "points": 100,
-    "prompt": "Frodo left Sam a Valentine, but even in the Shire, secrets are rarely left in plain sight. Explore the filesystem, uncover what\u2019s hidden, and use basic Linux commands to reveal the message meant only for a true companion. Download ctf.ova from https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing and import it into Oracle VirtualBox by clicking \"File\", then \"Import Appliance\u2026\". The login credential for both username and password is \"ctf\". Start your journey in Middle Earth by reading README.txt.",
+    "prompt": "Frodo left Sam a Valentine, but even in the Shire, secrets are rarely left in plain sight. Explore the filesystem, uncover what\u2019s hidden, and use basic Linux commands to reveal the message meant only for a true companion. Download ctf.ova by first clicking ctf.ova below and then downloading ctf.ova from the Google Drive. After that, import ctf.ova into Oracle VirtualBox by clicking \"File\", then \"Import Appliance\u2026\". The login credential for both username and password is \"ctf\". Start your journey in Middle Earth by reading README.txt.",
+    "downloads": [{ "label": "ctf.ova", "url": "https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing" }],
     "hint": "Consider some of these Linux commands:\n- cd f*\n- cat README.txt\n- ls\n- ls -l\n- ls -al\n- grep -R Frodo .\n\nConsider this too from the home directory:\n- ls -l f*\n- chmod 644 frodo_sam_valentine_linux/README.txt\n- ls -l f*\n- chmod 664 frodo_sam_valentine_linux/README.txt"
   },
   {
@@ -235,7 +236,8 @@
     "category": "PW Crack",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "The Boss left a heartfelt message for Pim, Charlie, Allan, and Glep, but, as usual, he didn’t deliver it in a normal way. Instead, the message was shattered into a series of MD5 hashes, each hiding a small piece of what he meant to say. It’s up to the Smiling Friends to recover each fragment, piece the message back together, and make sense of it as a whole. Once you’ve found all the parts, you’ll need to assemble them in order, add the underscores yourself, and put the final message in the proper FLAG{} format. You can find the hashes and the code you’ll need here: https://colab.research.google.com/drive/1TSuYwxYJhljou3BVkYkjB5frNYjdbpQr?usp=sharing.",
+    "prompt": "The Boss left a heartfelt message for Pim, Charlie, Allan, and Glep, but, as usual, he didn’t deliver it in a normal way. Instead, the message was shattered into a series of MD5 hashes, each hiding a small piece of what he meant to say. It’s up to the Smiling Friends to recover each fragment, piece the message back together, and make sense of it as a whole. Once you’ve found all the parts, you’ll need to assemble them in order, add the underscores yourself, and put the final message in the proper FLAG{} format. You can find the hashes and the code you’ll need by clicking The Boss's Valentine below",
+    "downloads": [{ "label": "The Boss's Valentine", "url": "https://colab.research.google.com/drive/1TSuYwxYJhljou3BVkYkjB5frNYjdbpQr?usp=sharing" }],
     "hint": "You only need the hashes where the output is letters to build your flag, don’t worry about any number outputs."
   },
   {
@@ -330,7 +332,8 @@
     "category": "Web Exp",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "Cobb has been dreaming too long. Somewhere deep below the surface, Mal is calling to him leaving fragments, whispers, and memories scattered across the layers of the dream. Follow her messages downward in https://sites.google.com/view/inceptionoftheheart/inception. Question what feels real. Trust the totems. Only in the deepest layer will the truth reveal itself.",
+    "prompt": "Cobb has been dreaming too long. Somewhere deep below the surface, Mal is calling to him leaving fragments, whispers, and memories scattered across the layers of the dream. Follow her messages downward in by clicking Inception of the Heart below. Question what feels real. Trust the totems. Only in the deepest layer will the truth reveal itself.",
+    "downloads": [{ "label": "Inception of the Heart", "url": "https://sites.google.com/view/inceptionoftheheart/inception" }],
     "hint": "Cobb’s team is composed of him (the extractor), Ariadne (the architect), Arthur (the point man), Eames (the forger), and Yousif (the chemist). Maybe Cobb should consider recruiting an inspector. Perhaps you can be the inspector for Cobb’s team. Be careful of fake flags if you decide to take on this role."
   },
   {
@@ -345,11 +348,12 @@
   },
   {
     "id": "WEB-05",
-    "title": "Sailor Moon",
+    "title": "Moonlit Valentines",
     "category": "Web Exp",
     "difficulty": "Hard",
     "points": 300,
-    "prompt": "In the name of the Moon, something seems off with this password reset page: https://script.google.com/macros/s/AKfycby1eCeQf5VpYz0cUKw94LY2bGz8wU0joR9GU9DMwLy8WqcpgXqomarBav-zhP4CMoRASg/exec. A familiar Sailor Guardian is trying to recover her account. Use the email usagi@moon.kingdom to investigate the reset process. Be quick when copying the flag once you reveal it.",
+    "prompt": "In the name of the Moon, something seems off with this password reset page. A familiar Sailor Guardian is trying to recover her account. Use the email usagi@moon.kingdom to investigate the reset process. Be quick when copying the flag once you reveal it. You can find the password resetting page by clicking Moonlit Valentines below.",
+    "downloads": [{ "label": "Moonlit Valentines", "url": "https://script.google.com/macros/s/AKfycby1eCeQf5VpYz0cUKw94LY2bGz8wU0joR9GU9DMwLy8WqcpgXqomarBav-zhP4CMoRASg/exec" }],
     "hint": "Take a look at how password reset links are delivered. A service like webhook.site may help you see what is being sent."
   }
 ]
