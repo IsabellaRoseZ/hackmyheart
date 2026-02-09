@@ -136,6 +136,7 @@
     "points": 100,
     "prompt": "Download the image and analyze it with a metadata editor to find the flag. Also, you’ll need CyberChef later. Remember, I am the Senate. If not, it’s treason then. Side note: did you know that the letters used to spell senator also spell treason? That’s cool!",
     "downloads": [{ "label": "the_senate.jpg", "url": "downloads/the_senate.jpg" }],
+    "preview_image": "downloads/the_senate.jpg",
     "hint": "Are the ciphers you’re using in the correct order?"
   },
   {
@@ -146,6 +147,7 @@
     "points": 200,
     "prompt": "The Joker has a special Valentine for Batman. He leaves it where only the observant will notice, wrapped in riddles and a playful smirk. Reading it straight won’t reveal the truth. You’ll need to see the letters from another angle, perhaps in the metadata.",
     "downloads": [{ "label": "why_so_serious_valentine.jpg", "url": "downloads/why_so_serious_valentine.jpg" }],
+    "preview_image": "downloads/why_so_serious_valentine.jpg",
     "hint": "Stay sharp and alert, the Joker can be shifty."
   },
   {
@@ -214,6 +216,7 @@
     "points": 200,
     "prompt": "Download the image and open it in a hex editor. Have fun on your journey Portal Master. Also, you’ll need CyberChef later. If you’re using https://hexed.it/, copying and pasting the message into CyberChef might be tricky, so below are some steps to follow.\n- Highlight the message in the plaintext area.\n- Press keys ctrl and c.\n- Change the style to CSV.\n- Click Copy & Close.\n- Paste the message in CyberChef.\n- Use the From Hex decoder with the Delimiter set to 0x with comma to turn the hex into the plaintext you saw in the image.",
     "downloads": [{ "label": "pop_fizz_love_potion_situation_is_crazy.jpg", "url": "downloads/pop_fizz_love_potion_situation_is_crazy.jpg" }],
+    "preview_image": "downloads/pop_fizz_love_potion_situation_is_crazy.jpg",
     "hint": "I hope you found the cipher you needed earlier, Portal Master. Now consider this: Pop Fizz lost track of his counting, but he figured out that the message was encoded in something called scytale. Perhaps the ingredients set the length of letters per turn. Also, keep punctuation and spaces, that may come in handy."
   },
   {
@@ -235,6 +238,28 @@
     "hint": "You only need the hashes where the output is letters to build your flag, don’t worry about any number outputs."
   },
   {
+    "id": "STEG-01",
+    "title": "Charles Leclerc",
+    "category": "Steg",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Some messages aren’t meant to be seen at first glance.",
+    "downloads": [{ "label": "charles_leclerc.png", "url": "downloads/charles_leclerc.png" }],
+    "preview_image": "downloads/charles_leclerc.png",
+    "hint": "Download the image and run it through a basic steganography decoder."
+  },
+  {
+    "id": "STEG-02",
+    "title": "Who’s My Valentine",
+    "category": "Steg",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love is in the air… but the answer isn’t in plain sight.",
+    "downloads": [{ "label": "whos_my_valentine.png", "url": "downloads/whos_my_valentine.png" }],
+    "preview_image": "downloads/whos_my_valentine.png",
+    "hint": "Download the image and run it through a basic steganography decoder."
+  },
+  {
     "id": "STEG-03",
     "title": "The Empire Loves Back",
     "category": "Steg",
@@ -242,7 +267,19 @@
     "points": 100,
     "prompt": "Love is in the air… and so are the birds. A special Valentine’s transmission has been intercepted from the Pork Side, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n - 2 lovers, even if they’re birds and pigs, still find a way to share a message.\n - -Some things aren’t meant to be read straight across.\n - Even when the text looks broken, it usually isn’t.\n - Give rearranging a try if it feels scrambled.\n - Good tools exist online for exactly this kind of puzzle.\n - 2nd thoughts? Don’t overthink it.",
     "downloads": [{ "label": "angry_birds_star_wars_valentine.jpg", "url": "downloads/angry_birds_star_wars_valentine.jpg" }],
+    "preview_image": "downloads/angry_birds_star_wars_valentine.jpg",
     "hint": "I think FutureBoy goes by the name of Alan Eliasen."
+  },
+  {
+    "id": "STEG-05",
+    "title": "Rizz Doggy",
+    "category": "Steg",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "This page might be hiding more than it shows.",
+    "downloads": [{ "label": "rizz_doggy.png", "url": "downloads/rizz_doggy.png" }],
+    "preview_image": "downloads/rizz_doggy.png",
+    "hint": "Look at the image more closely, the secret is hidden inside it, not in the text."
   },
   {
     "id": "STEG-06",
@@ -263,6 +300,7 @@
     "points": 300,
     "prompt": "Optimus Prime has sent Bumblebee a Valentine’s Day card, but there’s a hidden message inside, and Bumblebee needs your help to uncover it. Your mission is to extract and decode the secret flag.",
     "downloads": [{ "label": "autobotlove.png", "url": "downloads/autobotlove.png" }],
+    "preview_image": "downloads/autobotlove.png",
     "hint": "The Vigenère cipher works much like an Autobot encryption grid: a keyword controls a series of shifting letter patterns. Just as Cybertronians once hid vital intel from Decepticon interception, this method scrambles each letter based on a repeating codeword, keeping the true message safely concealed."
   },
   {
