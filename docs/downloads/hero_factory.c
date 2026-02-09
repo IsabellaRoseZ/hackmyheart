@@ -42,7 +42,7 @@ static const uint8_t diag_block_b[] = {
 };
 
 static const char service_blob_c[] =
-    "1c161b1d2136353531053b2e052e323f05393537373f342e2927";
+    "1c161b1d212d323f283f053329052c353405343f382f363b27";
 
 static const char aux_sequence_b[] =
     "P1CKA5F0RX0R67AND67SET671ND3X4";
@@ -210,3 +210,4 @@ int main(void) {
 }
 
 // Last time, I promise: FLAG{run_the_code_with_your_heart}
+
