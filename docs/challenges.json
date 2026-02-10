@@ -338,6 +338,17 @@
     "hint": "Think PATH and environment assumptions."
   },
   {
+    "id": "STEG-07",
+    "title": "Don't Break My Heart",
+    "category": "Steg",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Batman doesn’t say much, but he left you a Valentine anyway. The note is there if you know where to look.",
+    "downloads": [{ "label": "dont_break_my_heart.png", "url": "downloads/dont_break_my_heart.png" }],
+    "preview_image": "downloads/dont_break_my_heart.png",
+    "hint": "What you see is only the cover."
+  },
+  {
     "id": "STEG-08",
     "title": "AllSpark Amour",
     "category": "Steg",
