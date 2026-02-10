@@ -55,6 +55,13 @@
         .replaceAll("'", "&#039;");
     }
 
+    function normalizeText(s) {
+    return s
+      .split("\n")
+      .map(line => line.trimStart())
+      .join("\n");
+  }
+
 function render() {
   const q = search.value.toLowerCase().trim();
   const c = cat.value;
@@ -122,8 +129,9 @@ function render() {
     function briefingHtml(x) {
       const parts = [];
 
-      // Briefing text (use briefing if present, else prompt)
-      const text = (x.briefing || x.prompt || "").trim();
+      const rawText = (x.briefing || x.prompt || "").trim();
+      const text = normalizeText(rawText);
+      
       if (text) {
         parts.push(`
           <div class="briefing-text">
