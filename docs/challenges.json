@@ -176,7 +176,7 @@
     "category": "LA",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{DROID}.",
+    "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{droid}.",
     "downloads": [{ "label": "droids.log", "url": "downloads/droids.log" }],
     "hint": "Only one request was explicitly denied."
   },
