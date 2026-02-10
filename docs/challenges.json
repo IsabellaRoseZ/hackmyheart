@@ -227,7 +227,7 @@
     "category": "Log An",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{droid}.",
+    "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{droid}. Remember to lowercase all letters within a flag.",
     "downloads": [{ "label": "droids.log", "url": "downloads/droids.log" }],
     "hint": "Only one request was explicitly denied."
   },
@@ -267,9 +267,9 @@
     "category": "PW Crack",
     "difficulty": "Easy",
     "points": 100,
-    "prompt": "Love is in the air… and so are weak passwords. You have discovered a small credential dump belonging to three users: Juliet, Cupid, and Valentine. Can you crack their password hashes? Take the password as it is and format it in the FLAG{} format. Each cracked password is worth 100 points.\n Juliet:3268b1758db6421541d5e2bcfac1503d\n Cupid:308c0fe941e5f493b5ebf087dda9992f\n Valentine:7d1b1718247e5e42e6534baca20e6864",
+    "prompt": "Love is in the air… and so are weak passwords. You have discovered a small credential dump belonging to three users: Juliet, Cupid, and Valentine. Can you crack their password hashes? Take the passwords as they are from conversation_heart_hashes.txt below and format it in the FLAG{} format. For example, the flag will be formatted as follows: FLAG{hash1_hash2_hash3}",
     "downloads": [{ "label": "conversation_heart_hashes.txt", "url": "downloads/conversation_heart_hashes.txt" }],
-    "hint": "Eg. A cracked password of “lover99” will be entered into the answer submission form as FLAG{lover99}. Please enter each user’s password in flag format one at a time."
+    "hint": "It’s not \"me and you\"… it's M and D and 5."
   },
   {
     "id": "PAC-02",
