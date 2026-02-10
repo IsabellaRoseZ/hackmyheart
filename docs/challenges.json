@@ -1,5 +1,25 @@
 [
   {
+    "id": "BIN-01",
+    "title": "Overflowing Love",
+    "category": "Binary Exp",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love can be overwhelming… sometimes too overwhelming.\nThis program asks a simple Valentine’s question, but it might not be prepared for a very long answer. Can you make its heart overflow and reveal its secret?",
+    "downloads": [{ "label": "challenge.c", "url": "downloads/challenge.c" }],
+    "hint": "Look closely at the code!"
+  },
+  {
+    "id": "BIN-03",
+    "title": "Heart Over Hardware",
+    "category": "Binary Exp",
+    "difficulty": "Hard",
+    "points": 300,
+    "prompt": "Dear rookies,\nI’ve intercepted a C code from Von Nebula, and it’s up to you to analyze it.\n\nTake the code and paste it into an online C editor, like OnlineGDB.\nIf you’re using OnlineGDB, make sure you have two inputs, with the second one on the line below the first.\nStudy the code carefully as it contains information you will need later in CyberChef and stay alert because Corroder, Meltdown, Rotor, and XPlode are likely to try and distract you.\n\nI won’t be on this mission with you this time; I’m on the front line trying to stop Von Nebula from opening a blackhole vortex.\nI can’t leave the battle, and I don’t know the exact location of the vortex controls.\n\nThe flag you recover from this code is the key to shutting down the vortex.\nIf you don’t get it in time, Von Nebula could succeed, the vortex will form, and we won’t be able to celebrate Valentine’s Day.\n\nMove fast, stay sharp, and complete the mission rookies.The fate of the galaxy depends on you.\n\n- Stormer",
+    "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }],
+    "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
+  },
+  {
     "id": "CRY-01",
     "title": "Love, Locked",
     "category": "Crypto",
@@ -119,6 +139,16 @@
     "hint": "Did you find the magical key for Vigenere?"
   },
   {
+    "id": "CRY-13",
+    "title": "OS Love Story",
+    "category": "Crypto",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "Windows fell in love with Mac, but was too shy to say it plainly. So on Valentine’s Day, Windows sent an encrypted message. Take a look at the file below to begin solving this challenge. Be sure to format the flag properly for submission.",
+    "downloads": [{ "label": "windows_x_mac.txt", "url": "downloads/windows_x_mac.txt" }],
+    "hint": "XOXO isn’t just cute… it’s a clue."
+  },
+  {
     "id": "CRY-14",
     "title": "Nya's Secret Message",
     "category": "Crypto",
@@ -149,6 +179,16 @@
     "downloads": [{ "label": "why_so_serious_valentine.jpg", "url": "downloads/why_so_serious_valentine.jpg" }],
     "preview_image": "downloads/why_so_serious_valentine.jpg",
     "hint": "Stay sharp and alert, the Joker can be shifty."
+  },
+  {
+    "id": "LIN-01",
+    "title": "Frodo x Sam",
+    "category": "Linux",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Frodo left Sam a Valentine, but even in the Shire, secrets are rarely left in plain sight. Explore the filesystem, uncover what\u2019s hidden, and use basic Linux commands to reveal the message meant only for a true companion. Download ctf.ova by first clicking ctf.ova below and then downloading ctf.ova from the Google Drive. After that, import ctf.ova into Oracle VirtualBox by clicking \"File\", then \"Import Appliance\u2026\". The login credential for both username and password is \"ctf\". Start your journey in Middle Earth by reading README.txt.",
+    "downloads": [{ "label": "ctf.ova", "url": "https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing" }],
+    "hint": "Consider some of these Linux commands:\n- cd f*\n- cat README.txt\n- ls\n- ls -l\n- ls -al\n- grep -R Frodo .\n\nConsider this too from the home directory:\n- ls -l f*\n- chmod 644 frodo_sam_valentine_linux/README.txt\n- ls -l f*\n- chmod 664 frodo_sam_valentine_linux/README.txt"
   },
   {
     "id": "LOG-01",
@@ -189,16 +229,6 @@
     "prompt": "How many seconds elapsed between Padmé sending a message and Anakin first checking his inbox? The flag should be written as FLAG{#}.",
     "downloads": [{ "label": "droids.log", "url": "downloads/droids.log" }],
     "hint": "You might have to do a little bit of math with the timestamps."
-  },
-  {
-    "id": "LIN-01",
-    "title": "Frodo x Sam",
-    "category": "Linux",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "Frodo left Sam a Valentine, but even in the Shire, secrets are rarely left in plain sight. Explore the filesystem, uncover what\u2019s hidden, and use basic Linux commands to reveal the message meant only for a true companion. Download ctf.ova by first clicking ctf.ova below and then downloading ctf.ova from the Google Drive. After that, import ctf.ova into Oracle VirtualBox by clicking \"File\", then \"Import Appliance\u2026\". The login credential for both username and password is \"ctf\". Start your journey in Middle Earth by reading README.txt.",
-    "downloads": [{ "label": "ctf.ova", "url": "https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing" }],
-    "hint": "Consider some of these Linux commands:\n- cd f*\n- cat README.txt\n- ls\n- ls -l\n- ls -al\n- grep -R Frodo .\n\nConsider this too from the home directory:\n- ls -l f*\n- chmod 644 frodo_sam_valentine_linux/README.txt\n- ls -l f*\n- chmod 664 frodo_sam_valentine_linux/README.txt"
   },
   {
     "id": "OSINT-01",
@@ -305,26 +335,6 @@
     "downloads": [{ "label": "autobotlove.png", "url": "downloads/autobotlove.png" }],
     "preview_image": "downloads/autobotlove.png",
     "hint": "The Vigenère cipher works much like an Autobot encryption grid: a keyword controls a series of shifting letter patterns. Just as Cybertronians once hid vital intel from Decepticon interception, this method scrambles each letter based on a repeating codeword, keeping the true message safely concealed."
-  },
-  {
-    "id": "BIN-01",
-    "title": "Overflowing Love",
-    "category": "Binary Exp",
-    "difficulty": "Easy",
-    "points": 100,
-    "prompt": "Love can be overwhelming… sometimes too overwhelming.\nThis program asks a simple Valentine’s question, but it might not be prepared for a very long answer. Can you make its heart overflow and reveal its secret?",
-    "downloads": [{ "label": "challenge.c", "url": "downloads/challenge.c" }],
-    "hint": "Look closely at the code!"
-  },
-  {
-    "id": "BIN-03",
-    "title": "Heart Over Hardware",
-    "category": "Binary Exp",
-    "difficulty": "Hard",
-    "points": 300,
-    "prompt": "Dear rookies,\nI’ve intercepted a C code from Von Nebula, and it’s up to you to analyze it.\n\nTake the code and paste it into an online C editor, like OnlineGDB.\nIf you’re using OnlineGDB, make sure you have two inputs, with the second one on the line below the first.\nStudy the code carefully as it contains information you will need later in CyberChef and stay alert because Corroder, Meltdown, Rotor, and XPlode are likely to try and distract you.\n\nI won’t be on this mission with you this time; I’m on the front line trying to stop Von Nebula from opening a blackhole vortex.\nI can’t leave the battle, and I don’t know the exact location of the vortex controls.\n\nThe flag you recover from this code is the key to shutting down the vortex.\nIf you don’t get it in time, Von Nebula could succeed, the vortex will form, and we won’t be able to celebrate Valentine’s Day.\n\nMove fast, stay sharp, and complete the mission rookies.The fate of the galaxy depends on you.\n\n- Stormer",
-    "downloads": [{ "label": "hero_factory.c", "url": "downloads/hero_factory.c" }],
-    "hint": "Count carefully how long the service log can be, then consider what character comes immediately after it in memory.\n\nHere are some examples to consider (these won’t work, but maybe you can find a pattern):\n\naB3dE9FhJkLmN2PqR4sT5U6VW7XyZ8A1bCDeF2G3H4I5J6K7L8M9N0PqRstUVwXVy\n9ZyXWvUTsRqP0N8M7L6KJ5H4G3F2EdCbA1zYxWvUTsRqP0N8M7L6KJ5H4G3F2EdCy\nQwErTyUiOpAsDfGhJkLzXcVbNm1234567890aBcDEfGhIjKlMnOpQrStUvWxYzABy\nmN8BvC0ZxQ2S7YwPE5T4kH1DR9A6FJ3LUOeWqKMGpXcIayhslVf0rZ8tdB2C9N7Py\nAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789aby"
   },
   {
     "id": "WEB-03",
