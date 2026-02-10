@@ -10,6 +10,16 @@
     "hint": "Look closely at the code!"
   },
   {
+    "id": "BIN-02",
+    "title": "Futaba’s Lovebot",
+    "category": "Binary Exp",
+    "difficulty": "Medium",
+    "points": 200,
+    "prompt": "On Valentine’s Day, Futaba builds a Lovebot that simply echoes whatever message you give it. Honesty is the best design choice, but some inputs make the bot reveal more than just words, leaking strange values as if pieces of its memory are slipping out. Somewhere in the bot’s code, Futaba tucked away a secret Valentine surprise. Can you say the right kind of message to make the Lovebot confess its secret? Click on Futaba’s Lovebot below.",
+    "downloads": [{ "label": "Futaba’s Lovebot", "url": "https://script.google.com/macros/s/AKfycbwNeEhMY9rFn25WVUTO1Xf_qkB1cBz9Ix7LwNAm3d8HObj9tQeeFDLpBzy2WRVuRcKO/exec" }],
+    "hint": "Enough ‘leaks’ plus one risky specifier might make Futaba panic."
+  },
+  {
     "id": "BIN-03",
     "title": "Heart Over Hardware",
     "category": "Binary Exp",
