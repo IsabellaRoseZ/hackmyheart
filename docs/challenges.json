@@ -135,7 +135,8 @@
     "category": "Crypto",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "Pooh Bear has been sent a message from a mysterious wizard. The wizard covered the message in magical HUNNY. Here is the message:\n4i 5u 4o 54 53 59 4o 57 4y 42 32 47 53 59 53 48 4j 4u 59 47 49 33 42 5n 4r 35 4c 45 51 57 52 53 4j 49 5u 56 55 34 43 59 47 4n 53 48 55 5n 4a 4l 47 46 54 47 47 4x 53 32 4s 52 52 46 4s 53 52 5y\n\nThe wizard has provided this message for Pooh:\nOh d dear… the message was first t turned on its head at bash, where each little letter scurried off to meet its distant twin.\nTh then, with a puff of magic, it was lifted into a broader shape, padded ever so carefully until it fit a familiar sixty-four symbol mold.\nN next, the symbols were gently squeezed together, becoming a simpler pattern of thirty-two marks, before being hardened into raw hex, if you please.\nA and finally, an old Vigenere charm was wrapped around the whole thing, with a quiet key guiding the very last layer of disguise.\n\nHelp Pooh decode the message so he can know what it says. Maybe use CyberChef.",
+    "prompt": "Pooh Bear has been sent a message from a mysterious wizard. The wizard covered the message in magical HUNNY. Download hunny_pot.txt below to find the encoded message and a note from the wizard. Help Pooh decode the message so he can know what it says.",
+    "downloads": [{ "label": "hunny_pot.txt", "url": "downloads/hunny_pot.txt" }],
     "hint": "Did you find the magical key for Vigenere?"
   },
   {
@@ -298,7 +299,7 @@
     "category": "Steg",
     "difficulty": "Easy",
     "points": 100,
-    "prompt": "Love is in the air… and so are the birds. A special Valentine’s transmission has been intercepted from the Pork Side, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n - 2 lovers, even if they’re birds and pigs, still find a way to share a message.\n - -Some things aren’t meant to be read straight across.\n - Even when the text looks broken, it usually isn’t.\n - Give rearranging a try if it feels scrambled.\n - Good tools exist online for exactly this kind of puzzle.\n - 2nd thoughts? Don’t overthink it.",
+    "prompt": "The Pork Side has intercepted a special Valentine’s transmission from the Angry Birds Alliance, but it doesn’t look like a normal message. Somewhere inside is a hidden flag. You’ll need to decode what’s between the lines to uncover it. Maybe try looking for a decoder maintained by someone who once called themself FutureBoy. You’ll also need a password, it is said that the password can be found in here:\n- Roses and blasters fill the air on this special day in the galaxy.\n - 2 lovers, even if they’re birds and pigs, still find a way to share a message.\n - -Some things aren’t meant to be read straight across.\n - Even when the text looks broken, it usually isn’t.\n - Give rearranging a try if it feels scrambled.\n - Good tools exist online for exactly this kind of puzzle.\n - 2nd thoughts? Don’t overthink it.",
     "downloads": [{ "label": "angry_birds_star_wars_valentine.jpg", "url": "downloads/angry_birds_star_wars_valentine.jpg" }],
     "preview_image": "downloads/angry_birds_star_wars_valentine.jpg",
     "hint": "I think FutureBoy goes by the name of Alan Eliasen."
