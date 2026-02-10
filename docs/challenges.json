@@ -204,7 +204,7 @@
   {
     "id": "LOG-01",
     "title": "Burn Book of Cell IDs",
-    "category": "Log An",
+    "category": "Log Anlys",
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Track the Plastics and their Valentine’s Day conversation. Count how many unique CELL_ID values appear in the log. Submit your answer as FLAG{<number>}.",
@@ -214,7 +214,7 @@
   {
     "id": "LOG-02",
     "title": "The Largest Love Note",
-    "category": "Log An",
+    "category": "Log Anlys",
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Someone sent an MMS. Classic. Find the largest attachment size in bytes (look for SIZE_BYTES=). Submit your answer as FLAG{<number>}.",
@@ -224,7 +224,7 @@
   {
     "id": "LOG-03",
     "title": "Love Is Forbidden",
-    "category": "Log An",
+    "category": "Log Anlys",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{droid}. Remember to lowercase all letters within a flag.",
@@ -234,7 +234,7 @@
   {
     "id": "LOG-04",
     "title": "From Naboo With Love",
-    "category": "Log An",
+    "category": "Log Anlys",
     "difficulty": "Hard",
     "points": 300,
     "prompt": "How many seconds elapsed between Padmé sending a message and Anakin first checking his inbox? The flag should be written as FLAG{#}.",
