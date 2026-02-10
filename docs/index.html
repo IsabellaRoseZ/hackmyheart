@@ -46,6 +46,13 @@
     let all = [];
     let openId = null; // only one open panel at a time
 
+    // Track completed challenges
+    const COMPLETED_KEY = "hmh_completed";
+    let completed = new Set(JSON.parse(localStorage.getItem(COMPLETED_KEY) || "[]"));
+    function saveCompleted() {
+      localStorage.setItem(COMPLETED_KEY, JSON.stringify([...completed]));
+    }
+
     function escapeHtml(s) {
       return String(s ?? "")
         .replaceAll("&", "&amp;")
@@ -56,75 +63,73 @@
     }
 
     function normalizeText(s) {
-    return s
-      .split("\n")
-      .map(line => line.trimStart())
-      .join("\n");
-  }
-
-function render() {
-  const q = search.value.toLowerCase().trim();
-  const c = cat.value;
-
-  const filtered = all.filter(x => {
-    const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
-    return (!q || hay.includes(q)) && (!c || x.category === c);
-  });
-
-  grid.innerHTML = filtered.map(x => {
-    const isOpen = openId === x.id;
-    const isOtherWhenOpen = !!openId && !isOpen;
-
-    return `
-      <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""}" data-id="${escapeHtml(x.id)}">
-        <div class="row">
-          <div>
-            <div class="title">${escapeHtml(x.title)}</div>
-            <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
-          </div>
-          <span class="pill">${escapeHtml(x.difficulty)}</span>
-        </div>
-
-        <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
-          ${isOpen ? "Close Challenge" : "Start Challenge"}
-        </button>
-
-        <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
-          ${isOpen ? briefingHtml(x) : ""}
-        </div>
-      </article>
-    `;
-  }).join("");
-
-  // Wire up Start/Close buttons
-  document.querySelectorAll(".start-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation(); // IMPORTANT: prevents immediate close
-      const id = btn.getAttribute("data-id");
-      openId = (openId === id) ? null : id;
-      render();
-
-      if (openId) {
-        const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
-        const panel = card?.querySelector(".briefing-panel");
-        panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    });
-  });
-}
-    
-  // Close open challenge when clicking anywhere outside the open card
-  document.addEventListener("click", (e) => {
-    if (!openId) return;
-  
-    const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
-    if (!activeCard) return;
-  
-    if (!activeCard.contains(e.target)) {
-      openId = null;
-      render();
+      return s
+        .split("\n")
+        .map(line => line.trimStart())
+        .join("\n");
     }
-  }, true); // ✅ capture phase
+
+    function render() {
+      const q = search.value.toLowerCase().trim();
+      const c = cat.value;
+
+      const filtered = all.filter(x => {
+        const hay = (x.title + " " + x.category + " " + (x.tags||[]).join(" ")).toLowerCase();
+        return (!q || hay.includes(q)) && (!c || x.category === c);
+      });
+
+      grid.innerHTML = filtered.map(x => {
+        const isOpen = openId === x.id;
+        const isOtherWhenOpen = !!openId && !isOpen;
+
+        return `
+          <article class="card ${isOpen ? "active" : ""} ${isOtherWhenOpen ? "collapsed" : ""} ${completed.has(x.id) ? "completed" : ""}" data-id="${escapeHtml(x.id)}">
+            <div class="row">
+              <div>
+                <div class="title">${escapeHtml(x.title)}</div>
+                <div class="meta">${escapeHtml(x.category)} • ${escapeHtml(x.points)} pts • ID: <code>${escapeHtml(x.id)}</code></div>
+              </div>
+              <span class="pill">${escapeHtml(x.difficulty)}</span>
+            </div>
+
+            <button class="link start-btn" data-id="${escapeHtml(x.id)}" ${isOtherWhenOpen ? "disabled" : ""}>
+              ${isOpen ? "Close Challenge" : "Start Challenge"}
+            </button>
+
+            <div class="briefing-panel ${isOpen ? "open" : ""}" id="panel-${escapeHtml(x.id)}">
+              ${isOpen ? briefingHtml(x) : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      // Wire up Start/Close buttons
+      document.querySelectorAll(".start-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation(); // IMPORTANT: prevents immediate close
+          const id = btn.getAttribute("data-id");
+          openId = (openId === id) ? null : id;
+          render();
+
+          if (openId) {
+            const card = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+            const panel = card?.querySelector(".briefing-panel");
+            panel?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        });
+      });
+    }
+
+    // Close open challenge when clicking anywhere outside the open card
+    document.addEventListener("click", (e) => {
+      if (!openId) return;
+      const activeCard = document.querySelector(`.card[data-id="${CSS.escape(openId)}"]`);
+      if (!activeCard) return;
+      if (!activeCard.contains(e.target)) {
+        openId = null;
+        render();
+      }
+    }, true); // capture phase
 
     function briefingHtml(x) {
       const parts = [];
@@ -138,7 +143,6 @@ function render() {
         `);
       }
 
-      // Inline image preview (optional)
       if (x.preview_image) {
         parts.push(`
           <div class="briefing-preview">
@@ -147,9 +151,7 @@ function render() {
         `);
       }
 
-      // Downloads: support downloads[] or download string
       const links = [];
-
       if (Array.isArray(x.downloads) && x.downloads.length) {
         x.downloads.forEach(d => {
           if (d && d.url) {
@@ -170,7 +172,6 @@ function render() {
         parts.push(`<div class="briefing-muted">No downloads needed — solve from the briefing.</div>`);
       }
 
-      // Hint (optional)
       if (x.hint) {
         parts.push(`
           <details class="hint">
@@ -180,7 +181,14 @@ function render() {
         `);
       }
 
-      // Quick copy helper for Challenge ID
+      parts.push(`
+        <button
+          class="link complete-btn ${completed.has(x.id) ? "done" : ""}"
+          onclick="event.stopPropagation(); toggleComplete('${escapeHtml(x.id)}')">
+          ${completed.has(x.id) ? "Mark Incomplete" : "Mark Complete"}
+        </button>
+      `);
+
       parts.push(`
         <div class="briefing-tools">
           <button class="copy-btn" onclick="navigator.clipboard.writeText('${escapeHtml(x.id)}')">Copy Challenge ID</button>
@@ -189,6 +197,17 @@ function render() {
       `);
 
       return parts.join("");
+    }
+
+    // Toggle completed state
+    function toggleComplete(id) {
+      if (completed.has(id)) {
+        completed.delete(id);
+      } else {
+        completed.add(id);
+      }
+      saveCompleted();
+      render();
     }
 
     fetch("challenges.json")

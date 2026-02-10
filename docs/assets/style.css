@@ -517,3 +517,38 @@ button.link {
   word-wrap: break-word;
   white-space: pre-wrap;
 }
+
+/* Completed card highlight: softer green */
+.card.completed {
+  border: 2px solid #4caf7f;   /* deeper, calmer green */
+  background: #1e2a25;        /* subtle green-tinted dark background */
+  box-shadow: 0 4px 12px rgba(76, 175, 127, 0.25); /* gentle glow */
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Mark Complete button style */
+.complete-btn {
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #888;
+  border-radius: 6px;
+  background: #2a2f3a;         /* dark button bg */
+  color: #ddd;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.complete-btn:hover {
+  background: #3b4150;
+}
+
+.complete-btn.done {
+  background: #4caf7f;        /* same soft green */
+  color: #fff;
+  border-color: #4caf7f;
+}
+
+.complete-btn.done:hover {
+  background: #42956e;        /* slightly darker on hover */
+  border-color: #42956e;
+}
