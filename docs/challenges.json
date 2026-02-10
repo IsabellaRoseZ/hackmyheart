@@ -267,7 +267,7 @@
     "category": "PW Crack",
     "difficulty": "Easy",
     "points": 100,
-    "prompt": "Love is in the air… and so are weak passwords. You have discovered a small credential dump belonging to three users: Juliet, Cupid, and Valentine. Can you crack their password hashes? Take the passwords as they are from conversation_heart_hashes.txt below and format it in the FLAG{} format. For example, the flag will be formatted as follows: FLAG{hash1_hash2_hash3}",
+    "prompt": "Love is in the air… and so are weak passwords. You have discovered a small credential dump belonging to three users: Juliet, Cupid, and Valentine. Can you crack their password hashes? Take the passwords as they are and format them as follows: FLAG{hash1_hash2_hash3}",
     "downloads": [{ "label": "conversation_heart_hashes.txt", "url": "downloads/conversation_heart_hashes.txt" }],
     "hint": "It’s not \"me and you\"… it's M and D and 5."
   },
