@@ -345,7 +345,7 @@
     "prompt": "Wolverine has secretly sent you a Valentine note. Can you find the secret message in his note?",
     "downloads": [{ "label": "x-tra_special.png", "url": "downloads/x-tra_special.png" }],
     "preview_image": "downloads/x-tra_special.png",
-    "hint": "Think PATH and environment assumptions."
+    "hint": "Cut through the outer layer of love."
   },
   {
     "id": "STEG-07",
