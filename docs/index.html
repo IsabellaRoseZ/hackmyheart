@@ -134,9 +134,7 @@ function render() {
       
       if (text) {
         parts.push(`
-          <div class="briefing-text">
-            ${escapeHtml(text).replaceAll("\n", "<br/>")}
-          </div>
+          <div class="briefing-text">${escapeHtml(text).replaceAll("\n", "<br/>")}</div>
         `);
       }
 
