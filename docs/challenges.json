@@ -305,6 +305,17 @@
     "hint": "I think FutureBoy goes by the name of Alan Eliasen."
   },
   {
+    "id": "STEG-04",
+    "title": "Woodstock's Rough Love",
+    "category": "Steg",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Woodstock throws his heart at Snoopy. Love moves fast! Blink and you’ll miss it.",
+    "downloads": [{ "label": "rough_love.gif", "url": "downloads/rough_love.gif" }],
+    "preview_image": "downloads/rough_love.gif",
+    "hint": "Inspect every moment carefully… one frame says more than the rest."
+  },
+  {
     "id": "STEG-05",
     "title": "Rizz Doggy",
     "category": "Steg",
