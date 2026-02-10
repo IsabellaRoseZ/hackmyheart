@@ -193,7 +193,7 @@
   {
     "id": "LOG-01",
     "title": "Burn Book of Cell IDs",
-    "category": "LA",
+    "category": "Log An",
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Track the Plastics and their Valentine’s Day conversation. Count how many unique CELL_ID values appear in the log. Submit your answer as FLAG{<number>}.",
@@ -203,7 +203,7 @@
   {
     "id": "LOG-02",
     "title": "The Largest Love Note",
-    "category": "LA",
+    "category": "Log An",
     "difficulty": "Easy",
     "points": 100,
     "prompt": "Someone sent an MMS. Classic. Find the largest attachment size in bytes (look for SIZE_BYTES=). Submit your answer as FLAG{<number>}.",
@@ -213,7 +213,7 @@
   {
     "id": "LOG-03",
     "title": "Love Is Forbidden",
-    "category": "LA",
+    "category": "Log An",
     "difficulty": "Medium",
     "points": 200,
     "prompt": "What is the name of the droid that returns the only forbidden error? The flag should be written as FLAG{droid}.",
@@ -223,7 +223,7 @@
   {
     "id": "LOG-04",
     "title": "From Naboo With Love",
-    "category": "LA",
+    "category": "Log An",
     "difficulty": "Hard",
     "points": 300,
     "prompt": "How many seconds elapsed between Padmé sending a message and Anakin first checking his inbox? The flag should be written as FLAG{#}.",
@@ -335,6 +335,26 @@
     "downloads": [{ "label": "autobotlove.png", "url": "downloads/autobotlove.png" }],
     "preview_image": "downloads/autobotlove.png",
     "hint": "The Vigenère cipher works much like an Autobot encryption grid: a keyword controls a series of shifting letter patterns. Just as Cybertronians once hid vital intel from Decepticon interception, this method scrambles each letter based on a repeating codeword, keeping the true message safely concealed."
+  },
+  {
+    "id": "WEB-01",
+    "title": "Sweet Secrets of Rilakkuma",
+    "category": "Web Exp",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "It’s Valentine’s Day, and Rilakkuma is feeling extra shy. The page looks cute and harmless, but he’s hiding his love letter somewhere he didn’t expect you to look. Click Sweet Secrets of Rilakkuma below to find the flag.",
+    "downloads": [{ "label": "Sweet Secrets of Rilakkuma", "url": "https://sites.google.com/view/sweet-secrets-of-rilakkuma/hmh" }],
+    "hint": "Maybe the inspecting tool will reveal secrets…"
+  },
+  {
+    "id": "WEB-02",
+    "title": "Look Closer, Valentine",
+    "category": "Web Exp",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Rilakkuma, Korilakkuma, and Kiiroitori are spending Valentine’s Day together and everything looks sweet and cozy at first glance. But love is in the details. Look closer, Valentine… not all confessions want to be seen right away. Click Look Closer, Valentine below to find the flag.",
+    "downloads": [{ "label": "Look Closer, Valentine", "url": "https://sites.google.com/view/look-closer-valentine/hmh" }],
+    "hint": "Is there any secret text on this website?"
   },
   {
     "id": "WEB-03",
