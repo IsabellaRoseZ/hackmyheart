@@ -483,11 +483,11 @@ button.link {
 /* Image always fits container */
 .briefing-img {
   max-width: 100%;
-  max-height: 360px;      /* 👈 limits tall images */
+  max-height: 360px;
   width: auto;
   height: auto;
 
-  object-fit: contain;    /* 👈 key line: no cropping, no stretching */
+  object-fit: contain;
   border-radius: 10px;
 
   display: block;
