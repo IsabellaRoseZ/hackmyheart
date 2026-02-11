@@ -201,6 +201,17 @@
     "downloads": [{ "label": "ctf.ova", "url": "https://drive.google.com/file/d/1SRbLaMKnArgn8TrT-7YP97f3ZOJ1F6Gx/view?usp=sharing" }],
     "hint": "Consider some of these Linux commands:\n- cd f*\n- cat README.txt\n- ls\n- ls -l\n- ls -al\n- grep -R Frodo .\n\nConsider this too from the home directory:\n- ls -l f*\n- chmod 644 frodo_sam_valentine_linux/README.txt\n- ls -l f*\n- chmod 664 frodo_sam_valentine_linux/README.txt"
   },
+
+  {
+    "id": "LIN-02",
+    "title": "Elphaba x Glinda",
+    "category": "Linux",
+    "difficulty": "Easy",
+    "points": 100,
+    "prompt": "Love is in the air in the Land of Oz, but something wicked is hiding beneath the sparkle of Valentine’s Day. Elphaba and Glinda have left clues scattered from Shiz University to the Emerald City, and only a clever traveler can follow the trail. Find the proof that even in Oz, wicked love prevails.",
+    "downloads": [{ "label": "ctf.ova", "url": "https://drive.google.com/file/d/1H08Q6uAy4DMV2RDgYorlYgvVsIcKJa-L/view?usp=sharing" }],
+    "hint": "Some books aren’t meant to be opened so easily."
+  },
   {
     "id": "LOG-01",
     "title": "Burn Book of Cell IDs",
@@ -396,7 +407,7 @@
     "difficulty": "Medium",
     "points": 200,
     "prompt": "Cobb has been dreaming too long. Somewhere deep below the surface, Mal is calling to him leaving fragments, whispers, and memories scattered across the layers of the dream. Follow her messages downward by clicking Inception of the Heart below. Question what feels real. Trust the totems. Only in the deepest layer will the truth reveal itself.",
-    "downloads": [{ "label": "Inception of the Heart", "url": "https://sites.google.com/view/inceptionoftheheart/inception" }],
+    "downloads": [{ "label": "Inception of the Heart", "url": "https://sites.google.com/view/inceptionoftheheart/hmh" }],
     "hint": "Cobb’s team is composed of him (the extractor), Ariadne (the architect), Arthur (the point man), Eames (the forger), and Yousif (the chemist). Maybe Cobb should consider recruiting an inspector. Perhaps you can be the inspector for Cobb’s team. Be careful of fake flags if you decide to take on this role."
   },
   {
