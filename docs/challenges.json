@@ -288,7 +288,7 @@
     "category": "PW Crack",
     "difficulty": "Medium",
     "points": 200,
-    "prompt": "The Boss left a heartfelt message for Pim, Charlie, Allan, and Glep, but, as usual, he didn’t deliver it in a normal way. Instead, the message was shattered into a series of MD5 hashes, each hiding a small piece of what he meant to say. It’s up to the Smiling Friends to recover each fragment, piece the message back together, and make sense of it as a whole. Once you’ve found all the parts, you’ll need to assemble them in order, add the underscores yourself, and put the final message in the proper FLAG{} format. You can find the hashes and the code you’ll need by clicking The Boss's Valentine below",
+    "prompt": "The Boss left a heartfelt message for Pim, Charlie, Allan, and Glep, but, as usual, he didn’t deliver it in a normal way. Instead, the message was shattered into a series of MD5 hashes, each hiding a small piece of what he meant to say. It’s up to the Smiling Friends to recover each fragment, piece the message back together, and make sense of it as a whole. Once you’ve found all the parts, you’ll need to assemble them in order, add the underscores yourself, and put the final message in the proper FLAG{} format. You can find the hashes and the code you’ll need by clicking The Boss's Valentine below.",
     "downloads": [{ "label": "The Boss's Valentine", "url": "https://colab.research.google.com/drive/1TSuYwxYJhljou3BVkYkjB5frNYjdbpQr?usp=sharing" }],
     "hint": "You only need the hashes where the output is letters to build your flag, don’t worry about any number outputs."
   },
